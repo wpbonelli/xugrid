@@ -150,9 +150,9 @@ Fixed
 - Release 0.12.0 changed the return type of the face node connectivity of
   :attr:`xugrid.Ugrid2d.voronoi_topology` from a `scipy.sparse.coo_matrix` to
   an ordinary `np.array` of integers (and similarly for internal voronoi
-  tesselations); this dense array had fill (hard-coded) values of -1,
+  tessellations); this dense array had fill (hard-coded) values of -1,
   potentially differing from the grid's fill value. This lead to a number of
-  errors for methods relying on voronoi tesselations (such as contour plots)
+  errors for methods relying on voronoi tessellations (such as contour plots)
   if the fill value of the grid was not -1. Internally, a ``FILL_VALUE = -1``
   is now used everywhere in connectivity arrays, and fill values are no longer
   passed for internal methods; a value of -1 is always assumed. When converting
@@ -660,7 +660,7 @@ Fixed
   :meth:`xugrid.Ugrid2d.tesselate_circumcenter_voronoi` will only include
   relevant centroids, rather than all the original centroids when
   ``add_exterior=False``. Previously, a scrambled voronoi grid could result
-  from the tesselation when the original grid contained cells with only one
+  from the tessellation when the original grid contained cells with only one
   neighbor.
 - ``import xugrid`` now does not throw ``ImportError`` anymore when the
   optional package ``geopandas`` was missing in the environment.

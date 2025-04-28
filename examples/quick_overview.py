@@ -49,7 +49,7 @@ ds
 # %%
 # There are a number of topology coordinates and variables: ``node_x`` and
 # ``node_y``, ``mesh2d`` and ``face_node_connectivity``. The dummy variable
-# is ``mesh2d`` contains only a 0 for data; its attributes contain a mapping of
+# ``mesh2d`` contains only a 0 for data; its attributes contain a mapping of
 # UGRID roles to dataset variables.
 #
 # We can convert this dataset to a UgridDataset which will automatically
@@ -70,7 +70,7 @@ elev
 #
 # Alternatively, we can build a Ugrid topology object first from vertices and
 # connectivity numpy arrays, for example when using the topology data generated
-# by a mesh generator (at which stage there is no data asssociated with the
+# by a mesh generator (at which stage there is no data associated with the
 # nodes, edges, or faces).
 #
 # There are many ways to construct such arrays, typically via mesh generators

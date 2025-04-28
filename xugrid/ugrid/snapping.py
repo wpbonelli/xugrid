@@ -358,7 +358,7 @@ def create_snap_to_grid_dataframe(
     Parameters
     ----------
     lines: gpd.GeoDataFrame
-        Line data. Geometry colum should contain exclusively LineStrings.
+        Line data. Geometry column should contain exclusively LineStrings.
     grid: xugrid.Ugrid2d
         Grid of cells to snap lines to.
     max_snap_distance: float
@@ -482,7 +482,7 @@ def snap_to_grid(
     Parameters
     ----------
     lines: gpd.GeoDataFrame
-        Line data. Geometry colum should contain exclusively LineStrings.
+        Line data. Geometry column should contain exclusively LineStrings.
     grid: xr.DataArray or xu.UgridDataArray of integers
         Grid of cells to snap lines to.
     max_snap_distance: float

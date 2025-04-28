@@ -586,7 +586,7 @@ class BarycentricInterpolator(BaseRegridder):
     """
     The BaryCentricInterpolator searches the centroid of every face of the
     target grid in the source grid. It finds by which source faces the centroid
-    is surrounded (via its centroidal voronoi tesselation), and computes
+    is surrounded (via its centroidal voronoi tessellation), and computes
     barycentric weights which can be used for to interpolate smoothly between
     the values associated with the source faces.
 

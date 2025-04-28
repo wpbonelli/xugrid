@@ -104,10 +104,12 @@ zarr = "*"
 ipykernel = "*"  # So we can run examples
 twine = "*"
 python-build = "*"
+codespell = "*"
 
 [tool.pixi.tasks]
 install-pre-commit = "pre-commit install"
 pre-commit = "pre-commit run --all-files"
+lint = "ruff format --check && ruff check && codespell"
 test = "NUMBA_DISABLE_JIT=1 pytest --cov=xugrid --cov-report xml --cov-report term"
 docs = "NUMBA_DISABLE_JIT=1 sphinx-build docs docs/_build"
 all = { depends-on = ["pre-commit", "test", "docs"]}
@@ -153,3 +155,14 @@ ignore-init-module-imports = true
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
+
+[tool.codespell]
+skip = "./docs/api,./docs/_build,./pixi.lock,./docs/changelog.rst,./docs/examples,./docs/examples-dev,**.ipynb"
+ignore-words-list = [
+    "arry",
+    "coo",
+    "vor",
+    "nd",
+    "re-use",
+    "re-uses",
+]
