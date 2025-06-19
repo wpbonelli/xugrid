@@ -1,0 +1,1772 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API Reference &#8212; Xugrid 0.14.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/theme-deltares.css?v=45942d5c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=3a3a8e7f"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="Disk" href="sample_data/disk.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.14.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/xugrid-logo.svg" class="logo__image only-light" alt=""/>
+    <img src="_static/xugrid-logo.svg" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Xugrid</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dev_docs.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Deltares/xugrid" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deltares.nl/en/" title="Deltares" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/deltares-blue.svg" class="icon-link-image" alt="Deltares"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dev_docs.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Deltares/xugrid" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deltares.nl/en/" title="Deltares" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/deltares-blue.svg" class="icon-link-image" alt="Deltares"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.load_dataarray.html">xugrid.load_dataarray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.open_dataarray.html">xugrid.open_dataarray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.load_dataset.html">xugrid.load_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.open_dataset.html">xugrid.open_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.open_mfdataset.html">xugrid.open_mfdataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.open_zarr.html">xugrid.open_zarr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.full_like.html">xugrid.full_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.ones_like.html">xugrid.ones_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.zeros_like.html">xugrid.zeros_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.concat.html">xugrid.concat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.merge.html">xugrid.merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.merge_partitions.html">xugrid.merge_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.burn_vector_geometry.html">xugrid.burn_vector_geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.earcut_triangulate_polygons.html">xugrid.earcut_triangulate_polygons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.polygonize.html">xugrid.polygonize</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArray.html">xugrid.UgridDataArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArray.ugrid.html">xugrid.UgridDataArray.ugrid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArray.from_structured2d.html">xugrid.UgridDataArray.from_structured2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArray.from_data.html">xugrid.UgridDataArray.from_data</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataset.html">xugrid.UgridDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataset.ugrid.html">xugrid.UgridDataset.ugrid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataset.from_geodataframe.html">xugrid.UgridDataset.from_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataset.from_structured2d.html">xugrid.UgridDataset.from_structured2d</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.html">xugrid.UgridDatasetAccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.assign_node_coords.html">xugrid.UgridDatasetAccessor.assign_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.assign_edge_coords.html">xugrid.UgridDatasetAccessor.assign_edge_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.assign_face_coords.html">xugrid.UgridDatasetAccessor.assign_face_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.set_node_coords.html">xugrid.UgridDatasetAccessor.set_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.grid.html">xugrid.UgridDatasetAccessor.grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.name.html">xugrid.UgridDatasetAccessor.name</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.names.html">xugrid.UgridDatasetAccessor.names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.topology.html">xugrid.UgridDatasetAccessor.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.bounds.html">xugrid.UgridDatasetAccessor.bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.total_bounds.html">xugrid.UgridDatasetAccessor.total_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.crs.html">xugrid.UgridDatasetAccessor.crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.rename.html">xugrid.UgridDatasetAccessor.rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.set_crs.html">xugrid.UgridDatasetAccessor.set_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_crs.html">xugrid.UgridDatasetAccessor.to_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.sel.html">xugrid.UgridDatasetAccessor.sel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.sel_points.html">xugrid.UgridDatasetAccessor.sel_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.rasterize.html">xugrid.UgridDatasetAccessor.rasterize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.rasterize_like.html">xugrid.UgridDatasetAccessor.rasterize_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_periodic.html">xugrid.UgridDatasetAccessor.to_periodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_nonperiodic.html">xugrid.UgridDatasetAccessor.to_nonperiodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.intersect_line.html">xugrid.UgridDatasetAccessor.intersect_line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.intersect_linestring.html">xugrid.UgridDatasetAccessor.intersect_linestring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.partition.html">xugrid.UgridDatasetAccessor.partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.partition_by_label.html">xugrid.UgridDatasetAccessor.partition_by_label</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.reindex_like.html">xugrid.UgridDatasetAccessor.reindex_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_geodataframe.html">xugrid.UgridDatasetAccessor.to_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_dataset.html">xugrid.UgridDatasetAccessor.to_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_netcdf.html">xugrid.UgridDatasetAccessor.to_netcdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_zarr.html">xugrid.UgridDatasetAccessor.to_zarr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.html">xugrid.UgridDataArrayAccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.assign_node_coords.html">xugrid.UgridDataArrayAccessor.assign_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.assign_edge_coords.html">xugrid.UgridDataArrayAccessor.assign_edge_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.assign_face_coords.html">xugrid.UgridDataArrayAccessor.assign_face_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.set_node_coords.html">xugrid.UgridDataArrayAccessor.set_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.grids.html">xugrid.UgridDataArrayAccessor.grids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.name.html">xugrid.UgridDataArrayAccessor.name</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.names.html">xugrid.UgridDataArrayAccessor.names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.topology.html">xugrid.UgridDataArrayAccessor.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.bounds.html">xugrid.UgridDataArrayAccessor.bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.total_bounds.html">xugrid.UgridDataArrayAccessor.total_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.crs.html">xugrid.UgridDataArrayAccessor.crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.rename.html">xugrid.UgridDataArrayAccessor.rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.set_crs.html">xugrid.UgridDataArrayAccessor.set_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_crs.html">xugrid.UgridDataArrayAccessor.to_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.sel.html">xugrid.UgridDataArrayAccessor.sel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.sel_points.html">xugrid.UgridDataArrayAccessor.sel_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.intersect_line.html">xugrid.UgridDataArrayAccessor.intersect_line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.intersect_linestring.html">xugrid.UgridDataArrayAccessor.intersect_linestring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.label_partitions.html">xugrid.UgridDataArrayAccessor.label_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.partition.html">xugrid.UgridDataArrayAccessor.partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.partition_by_label.html">xugrid.UgridDataArrayAccessor.partition_by_label</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.rasterize.html">xugrid.UgridDataArrayAccessor.rasterize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.rasterize_like.html">xugrid.UgridDataArrayAccessor.rasterize_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.reindex_like.html">xugrid.UgridDataArrayAccessor.reindex_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_node.html">xugrid.UgridDataArrayAccessor.to_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_edge.html">xugrid.UgridDataArrayAccessor.to_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_face.html">xugrid.UgridDataArrayAccessor.to_face</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_periodic.html">xugrid.UgridDataArrayAccessor.to_periodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_nonperiodic.html">xugrid.UgridDataArrayAccessor.to_nonperiodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_geodataframe.html">xugrid.UgridDataArrayAccessor.to_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.binary_dilation.html">xugrid.UgridDataArrayAccessor.binary_dilation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.binary_erosion.html">xugrid.UgridDataArrayAccessor.binary_erosion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.connected_components.html">xugrid.UgridDataArrayAccessor.connected_components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee.html">xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.interpolate_na.html">xugrid.UgridDataArrayAccessor.interpolate_na</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.laplace_interpolate.html">xugrid.UgridDataArrayAccessor.laplace_interpolate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_dataset.html">xugrid.UgridDataArrayAccessor.to_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_netcdf.html">xugrid.UgridDataArrayAccessor.to_netcdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_zarr.html">xugrid.UgridDataArrayAccessor.to_zarr</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.snap_nodes.html">xugrid.snap_nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.snap_to_grid.html">xugrid.snap_to_grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.create_snap_to_grid_dataframe.html">xugrid.create_snap_to_grid_dataframe</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.BarycentricInterpolator.html">xugrid.BarycentricInterpolator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.CentroidLocatorRegridder.html">xugrid.CentroidLocatorRegridder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.OverlapRegridder.html">xugrid.OverlapRegridder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.RelativeOverlapRegridder.html">xugrid.RelativeOverlapRegridder</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.NetworkGridder.html">xugrid.NetworkGridder</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.plot.contour.html">xugrid.plot.contour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.plot.contourf.html">xugrid.plot.contourf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.plot.imshow.html">xugrid.plot.imshow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.plot.line.html">xugrid.plot.line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.plot.pcolormesh.html">xugrid.plot.pcolormesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.plot.scatter.html">xugrid.plot.scatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.plot.surface.html">xugrid.plot.surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.plot.tripcolor.html">xugrid.plot.tripcolor</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.html">xugrid.Ugrid1d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.topology_dimension.html">xugrid.Ugrid1d.topology_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.dims.html">xugrid.Ugrid1d.dims</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.sizes.html">xugrid.Ugrid1d.sizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.attrs.html">xugrid.Ugrid1d.attrs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.coords.html">xugrid.Ugrid1d.coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.fill_value.html">xugrid.Ugrid1d.fill_value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.start_index.html">xugrid.Ugrid1d.start_index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.n_node.html">xugrid.Ugrid1d.n_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.node_dimension.html">xugrid.Ugrid1d.node_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.node_coordinates.html">xugrid.Ugrid1d.node_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.set_node_coords.html">xugrid.Ugrid1d.set_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.assign_node_coords.html">xugrid.Ugrid1d.assign_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.assign_edge_coords.html">xugrid.Ugrid1d.assign_edge_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.get_coordinates.html">xugrid.Ugrid1d.get_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.n_edge.html">xugrid.Ugrid1d.n_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.edge_dimension.html">xugrid.Ugrid1d.edge_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.edge_coordinates.html">xugrid.Ugrid1d.edge_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.edge_x.html">xugrid.Ugrid1d.edge_x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.edge_y.html">xugrid.Ugrid1d.edge_y</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.bounds.html">xugrid.Ugrid1d.bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.edge_bounds.html">xugrid.Ugrid1d.edge_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.edge_length.html">xugrid.Ugrid1d.edge_length</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.node_edge_connectivity.html">xugrid.Ugrid1d.node_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.node_node_connectivity.html">xugrid.Ugrid1d.node_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.edge_edge_connectivity.html">xugrid.Ugrid1d.edge_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.directed_node_node_connectivity.html">xugrid.Ugrid1d.directed_node_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.directed_edge_edge_connectivity.html">xugrid.Ugrid1d.directed_edge_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.get_connectivity_matrix.html">xugrid.Ugrid1d.get_connectivity_matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.is_cyclic.html">xugrid.Ugrid1d.is_cyclic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.format_connectivity_as_dense.html">xugrid.Ugrid1d.format_connectivity_as_dense</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.format_connectivity_as_sparse.html">xugrid.Ugrid1d.format_connectivity_as_sparse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.refine_by_vertices.html">xugrid.Ugrid1d.refine_by_vertices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.copy.html">xugrid.Ugrid1d.copy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.rename.html">xugrid.Ugrid1d.rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.isel.html">xugrid.Ugrid1d.isel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.sel.html">xugrid.Ugrid1d.sel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.sel_points.html">xugrid.Ugrid1d.sel_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.intersect_line.html">xugrid.Ugrid1d.intersect_line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.intersect_linestring.html">xugrid.Ugrid1d.intersect_linestring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.celltree.html">xugrid.Ugrid1d.celltree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.node_kdtree.html">xugrid.Ugrid1d.node_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.edge_kdtree.html">xugrid.Ugrid1d.edge_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.locate_nearest_node.html">xugrid.Ugrid1d.locate_nearest_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.locate_nearest_edge.html">xugrid.Ugrid1d.locate_nearest_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.locate_points.html">xugrid.Ugrid1d.locate_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.intersect_edges.html">xugrid.Ugrid1d.intersect_edges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.topology_subset.html">xugrid.Ugrid1d.topology_subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.merge_partitions.html">xugrid.Ugrid1d.merge_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.topological_sort_by_dfs.html">xugrid.Ugrid1d.topological_sort_by_dfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.contract_vertices.html">xugrid.Ugrid1d.contract_vertices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.remove_self_loops.html">xugrid.Ugrid1d.remove_self_loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.reindex_like.html">xugrid.Ugrid1d.reindex_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.from_meshkernel.html">xugrid.Ugrid1d.from_meshkernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.mesh.html">xugrid.Ugrid1d.mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.meshkernel.html">xugrid.Ugrid1d.meshkernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.set_crs.html">xugrid.Ugrid1d.set_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.to_crs.html">xugrid.Ugrid1d.to_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.from_dataset.html">xugrid.Ugrid1d.from_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.to_dataset.html">xugrid.Ugrid1d.to_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.from_geodataframe.html">xugrid.Ugrid1d.from_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.from_shapely.html">xugrid.Ugrid1d.from_shapely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.to_shapely.html">xugrid.Ugrid1d.to_shapely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.create_data_array.html">xugrid.Ugrid1d.create_data_array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid1d.plot.html">xugrid.Ugrid1d.plot</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.html">xugrid.Ugrid2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.topology_dimension.html">xugrid.Ugrid2d.topology_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.dims.html">xugrid.Ugrid2d.dims</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.sizes.html">xugrid.Ugrid2d.sizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.attrs.html">xugrid.Ugrid2d.attrs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.coords.html">xugrid.Ugrid2d.coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.fill_value.html">xugrid.Ugrid2d.fill_value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.start_index.html">xugrid.Ugrid2d.start_index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.n_node.html">xugrid.Ugrid2d.n_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.node_dimension.html">xugrid.Ugrid2d.node_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.node_coordinates.html">xugrid.Ugrid2d.node_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.set_node_coords.html">xugrid.Ugrid2d.set_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.assign_node_coords.html">xugrid.Ugrid2d.assign_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.assign_edge_coords.html">xugrid.Ugrid2d.assign_edge_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.assign_face_coords.html">xugrid.Ugrid2d.assign_face_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.get_coordinates.html">xugrid.Ugrid2d.get_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.n_edge.html">xugrid.Ugrid2d.n_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.edge_dimension.html">xugrid.Ugrid2d.edge_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.edge_coordinates.html">xugrid.Ugrid2d.edge_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.edge_x.html">xugrid.Ugrid2d.edge_x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.edge_y.html">xugrid.Ugrid2d.edge_y</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.edge_length.html">xugrid.Ugrid2d.edge_length</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.n_face.html">xugrid.Ugrid2d.n_face</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.face_dimension.html">xugrid.Ugrid2d.face_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.face_coordinates.html">xugrid.Ugrid2d.face_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.centroids.html">xugrid.Ugrid2d.centroids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.circumcenters.html">xugrid.Ugrid2d.circumcenters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.area.html">xugrid.Ugrid2d.area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.perimeter.html">xugrid.Ugrid2d.perimeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.face_x.html">xugrid.Ugrid2d.face_x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.face_y.html">xugrid.Ugrid2d.face_y</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.bounds.html">xugrid.Ugrid2d.bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.edge_bounds.html">xugrid.Ugrid2d.edge_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.face_bounds.html">xugrid.Ugrid2d.face_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.bounding_polygon.html">xugrid.Ugrid2d.bounding_polygon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.node_node_connectivity.html">xugrid.Ugrid2d.node_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.node_edge_connectivity.html">xugrid.Ugrid2d.node_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.node_face_connectivity.html">xugrid.Ugrid2d.node_face_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.edge_node_connectivity.html">xugrid.Ugrid2d.edge_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.edge_edge_connectivity.html">xugrid.Ugrid2d.edge_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.face_edge_connectivity.html">xugrid.Ugrid2d.face_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.face_face_connectivity.html">xugrid.Ugrid2d.face_face_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.directed_node_node_connectivity.html">xugrid.Ugrid2d.directed_node_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.directed_edge_edge_connectivity.html">xugrid.Ugrid2d.directed_edge_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.get_connectivity_matrix.html">xugrid.Ugrid2d.get_connectivity_matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.format_connectivity_as_dense.html">xugrid.Ugrid2d.format_connectivity_as_dense</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.format_connectivity_as_sparse.html">xugrid.Ugrid2d.format_connectivity_as_sparse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.validate_edge_node_connectivity.html">xugrid.Ugrid2d.validate_edge_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.exterior_edges.html">xugrid.Ugrid2d.exterior_edges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.exterior_faces.html">xugrid.Ugrid2d.exterior_faces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.copy.html">xugrid.Ugrid2d.copy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.rename.html">xugrid.Ugrid2d.rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.triangulate.html">xugrid.Ugrid2d.triangulate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.triangulation.html">xugrid.Ugrid2d.triangulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.voronoi_topology.html">xugrid.Ugrid2d.voronoi_topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.centroid_triangulation.html">xugrid.Ugrid2d.centroid_triangulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.tesselate_centroidal_voronoi.html">xugrid.Ugrid2d.tesselate_centroidal_voronoi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.tesselate_circumcenter_voronoi.html">xugrid.Ugrid2d.tesselate_circumcenter_voronoi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.reverse_cuthill_mckee.html">xugrid.Ugrid2d.reverse_cuthill_mckee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.compute_barycentric_weights.html">xugrid.Ugrid2d.compute_barycentric_weights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.isel.html">xugrid.Ugrid2d.isel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.sel.html">xugrid.Ugrid2d.sel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.sel_points.html">xugrid.Ugrid2d.sel_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.intersect_line.html">xugrid.Ugrid2d.intersect_line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.intersect_linestring.html">xugrid.Ugrid2d.intersect_linestring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.celltree.html">xugrid.Ugrid2d.celltree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.node_kdtree.html">xugrid.Ugrid2d.node_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.edge_kdtree.html">xugrid.Ugrid2d.edge_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.face_kdtree.html">xugrid.Ugrid2d.face_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.locate_nearest_node.html">xugrid.Ugrid2d.locate_nearest_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.locate_nearest_edge.html">xugrid.Ugrid2d.locate_nearest_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.locate_nearest_face.html">xugrid.Ugrid2d.locate_nearest_face</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.locate_points.html">xugrid.Ugrid2d.locate_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.intersect_edges.html">xugrid.Ugrid2d.intersect_edges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.locate_bounding_box.html">xugrid.Ugrid2d.locate_bounding_box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.rasterize.html">xugrid.Ugrid2d.rasterize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.rasterize_like.html">xugrid.Ugrid2d.rasterize_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.to_periodic.html">xugrid.Ugrid2d.to_periodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.to_nonperiodic.html">xugrid.Ugrid2d.to_nonperiodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.topology_subset.html">xugrid.Ugrid2d.topology_subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.label_partitions.html">xugrid.Ugrid2d.label_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.partition.html">xugrid.Ugrid2d.partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.merge_partitions.html">xugrid.Ugrid2d.merge_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.reindex_like.html">xugrid.Ugrid2d.reindex_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.from_meshkernel.html">xugrid.Ugrid2d.from_meshkernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.mesh.html">xugrid.Ugrid2d.mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.meshkernel.html">xugrid.Ugrid2d.meshkernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.set_crs.html">xugrid.Ugrid2d.set_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.to_crs.html">xugrid.Ugrid2d.to_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.from_dataset.html">xugrid.Ugrid2d.from_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.to_dataset.html">xugrid.Ugrid2d.to_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.from_geodataframe.html">xugrid.Ugrid2d.from_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.from_structured.html">xugrid.Ugrid2d.from_structured</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.from_structured_bounds.html">xugrid.Ugrid2d.from_structured_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.from_structured_intervals1d.html">xugrid.Ugrid2d.from_structured_intervals1d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.from_structured_intervals2d.html">xugrid.Ugrid2d.from_structured_intervals2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.from_shapely.html">xugrid.Ugrid2d.from_shapely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.to_shapely.html">xugrid.Ugrid2d.to_shapely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.earcut_triangulate_polygons.html">xugrid.Ugrid2d.earcut_triangulate_polygons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.create_data_array.html">xugrid.Ugrid2d.create_data_array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.Ugrid2d.plot.html">xugrid.Ugrid2d.plot</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridRolesAccessor.html">xugrid.UgridRolesAccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridRolesAccessor.topology.html">xugrid.UgridRolesAccessor.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridRolesAccessor.connectivity.html">xugrid.UgridRolesAccessor.connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridRolesAccessor.coordinates.html">xugrid.UgridRolesAccessor.coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/xugrid.UgridRolesAccessor.dimensions.html">xugrid.UgridRolesAccessor.dimensions</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">API Reference</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api-reference">
+<span id="api"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h1>
+<p>This page provides an auto-generated summary of xugrid’s API.</p>
+<p>Xugrid also almost completely exposes the attributes and methods of xarray
+DataArrays and Datasets. Refer to the Xarray documentation.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+</div>
+<section id="top-level-functions">
+<h2>Top-level functions<a class="headerlink" href="#top-level-functions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.load_dataarray.html#xugrid.load_dataarray" title="xugrid.load_dataarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_dataarray</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Open, load into memory, and close a DataArray from a file or file-like object containing a single data variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.open_dataarray.html#xugrid.open_dataarray" title="xugrid.open_dataarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_dataarray</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Open an DataArray from a file or file-like object containing a single data variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.load_dataset.html#xugrid.load_dataset" title="xugrid.load_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_dataset</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Open, load into memory, and close a Dataset from a file or file-like object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.open_dataset.html#xugrid.open_dataset" title="xugrid.open_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_dataset</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Open and decode a dataset from a file or file-like object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.open_mfdataset.html#xugrid.open_mfdataset" title="xugrid.open_mfdataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_mfdataset</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Open multiple files as a single dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.open_zarr.html#xugrid.open_zarr" title="xugrid.open_zarr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_zarr</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Load and decode a dataset from a Zarr store.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.full_like.html#xugrid.full_like" title="xugrid.full_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">full_like</span></code></a>()</p></td>
+<td><p>Return a new object with the same shape and type as a given object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.ones_like.html#xugrid.ones_like" title="xugrid.ones_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones_like</span></code></a>()</p></td>
+<td><p>Return a new object of ones with the same shape and type as a given dataarray or dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.zeros_like.html#xugrid.zeros_like" title="xugrid.zeros_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros_like</span></code></a>()</p></td>
+<td><p>Return a new object of zeros with the same shape and type as a given dataarray or dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.concat.html#xugrid.concat" title="xugrid.concat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concat</span></code></a>()</p></td>
+<td><p>Concatenate xarray objects along a new or existing dimension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.merge.html#xugrid.merge" title="xugrid.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a>(objects[, compat, join, fill_value, ...])</p></td>
+<td><p>Merge any number of xarray objects into a single Dataset as variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.merge_partitions.html#xugrid.merge_partitions" title="xugrid.merge_partitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_partitions</span></code></a>(partitions[, ...])</p></td>
+<td><p>Merge topology and data, partitioned along UGRID dimensions, into a single UgridDataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.burn_vector_geometry.html#xugrid.burn_vector_geometry" title="xugrid.burn_vector_geometry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">burn_vector_geometry</span></code></a>(gdf, like[, column, ...])</p></td>
+<td><p>Burn vector geometries (points, lines, polygons) into a Ugrid2d mesh.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.earcut_triangulate_polygons.html#xugrid.earcut_triangulate_polygons" title="xugrid.earcut_triangulate_polygons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">earcut_triangulate_polygons</span></code></a>(polygons[, column])</p></td>
+<td><p>Break down polygons using mapbox_earcut, and create a mesh from the resulting triangles.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.polygonize.html#xugrid.polygonize" title="xugrid.polygonize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polygonize</span></code></a>(uda)</p></td>
+<td><p>Polygonize a UgridDataArray.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ugriddataarray">
+<h2>UgridDataArray<a class="headerlink" href="#ugriddataarray" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArray.html#xugrid.UgridDataArray" title="xugrid.UgridDataArray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArray</span></code></a>(obj, grid)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArray.ugrid.html#xugrid.UgridDataArray.ugrid" title="xugrid.UgridDataArray.ugrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArray.ugrid</span></code></a></p></td>
+<td><p>UGRID Accessor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArray.from_structured2d.html#xugrid.UgridDataArray.from_structured2d" title="xugrid.UgridDataArray.from_structured2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArray.from_structured2d</span></code></a>(da[, x, y, ...])</p></td>
+<td><p>Create a UgridDataArray from a (structured) xarray DataArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArray.from_data.html#xugrid.UgridDataArray.from_data" title="xugrid.UgridDataArray.from_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArray.from_data</span></code></a>(data, grid, facet)</p></td>
+<td><p>Create a UgridDataArray from a grid and a 1D array of values.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ugriddataset">
+<h2>UgridDataset<a class="headerlink" href="#ugriddataset" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataset.html#xugrid.UgridDataset" title="xugrid.UgridDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataset</span></code></a>([obj, grids])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataset.ugrid.html#xugrid.UgridDataset.ugrid" title="xugrid.UgridDataset.ugrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataset.ugrid</span></code></a></p></td>
+<td><p>UGRID Accessor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataset.from_geodataframe.html#xugrid.UgridDataset.from_geodataframe" title="xugrid.UgridDataset.from_geodataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataset.from_geodataframe</span></code></a>(geodataframe)</p></td>
+<td><p>Convert a geodataframe into the appropriate Ugrid topology and dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataset.from_structured2d.html#xugrid.UgridDataset.from_structured2d" title="xugrid.UgridDataset.from_structured2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataset.from_structured2d</span></code></a>(dataset[, ...])</p></td>
+<td><p>Create a UgridDataset from a (structured) xarray Dataset.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ugrid-accessor">
+<h2>UGRID Accessor<a class="headerlink" href="#ugrid-accessor" title="Link to this heading">#</a></h2>
+<p>These methods and attributes are available under the <code class="docutils literal notranslate"><span class="pre">.ugrid</span></code> attribute of a
+UgridDataArray or UgridDataset.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.html#xugrid.UgridDatasetAccessor" title="xugrid.UgridDatasetAccessor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor</span></code></a>(obj, grids)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.assign_node_coords.html#xugrid.UgridDatasetAccessor.assign_node_coords" title="xugrid.UgridDatasetAccessor.assign_node_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.assign_node_coords</span></code></a>()</p></td>
+<td><p>Assign node coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.assign_edge_coords.html#xugrid.UgridDatasetAccessor.assign_edge_coords" title="xugrid.UgridDatasetAccessor.assign_edge_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.assign_edge_coords</span></code></a>()</p></td>
+<td><p>Assign edge coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.assign_face_coords.html#xugrid.UgridDatasetAccessor.assign_face_coords" title="xugrid.UgridDatasetAccessor.assign_face_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.assign_face_coords</span></code></a>()</p></td>
+<td><p>Assign face coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.set_node_coords.html#xugrid.UgridDatasetAccessor.set_node_coords" title="xugrid.UgridDatasetAccessor.set_node_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.set_node_coords</span></code></a>(node_x, ...)</p></td>
+<td><p>Given names of x and y coordinates of the nodes of an object, set them as the coordinates in the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.grid.html#xugrid.UgridDatasetAccessor.grid" title="xugrid.UgridDatasetAccessor.grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.grid</span></code></a></p></td>
+<td><p>Returns the single UGRID topology in this dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.name.html#xugrid.UgridDatasetAccessor.name" title="xugrid.UgridDatasetAccessor.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.name</span></code></a></p></td>
+<td><p>Returns name of the single UGRID topology in this dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.names.html#xugrid.UgridDatasetAccessor.names" title="xugrid.UgridDatasetAccessor.names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.names</span></code></a></p></td>
+<td><p>Names of all the UGRID topologies in the dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.topology.html#xugrid.UgridDatasetAccessor.topology" title="xugrid.UgridDatasetAccessor.topology"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.topology</span></code></a></p></td>
+<td><p>Mapping from names to UGRID topologies.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.bounds.html#xugrid.UgridDatasetAccessor.bounds" title="xugrid.UgridDatasetAccessor.bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.bounds</span></code></a></p></td>
+<td><p>Mapping from grid name to tuple containing <code class="docutils literal notranslate"><span class="pre">minx,</span> <span class="pre">miny,</span> <span class="pre">maxx,</span> <span class="pre">maxy</span></code> values of the grid's node coordinates for every grid in the dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.total_bounds.html#xugrid.UgridDatasetAccessor.total_bounds" title="xugrid.UgridDatasetAccessor.total_bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.total_bounds</span></code></a></p></td>
+<td><p>Returns a tuple containing <code class="docutils literal notranslate"><span class="pre">minx,</span> <span class="pre">miny,</span> <span class="pre">maxx,</span> <span class="pre">maxy</span></code> values for the bounds of the dataset as a whole.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.crs.html#xugrid.UgridDatasetAccessor.crs" title="xugrid.UgridDatasetAccessor.crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.crs</span></code></a></p></td>
+<td><p>The Coordinate Reference System (CRS) represented as a <code class="docutils literal notranslate"><span class="pre">pyproj.CRS</span></code> object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.rename.html#xugrid.UgridDatasetAccessor.rename" title="xugrid.UgridDatasetAccessor.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.rename</span></code></a>(...)</p></td>
+<td><p>Give a new name to the UGRID topology and update the associated coordinate and dimension names in the Dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.set_crs.html#xugrid.UgridDatasetAccessor.set_crs" title="xugrid.UgridDatasetAccessor.set_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.set_crs</span></code></a>([crs, epsg, ...])</p></td>
+<td><p>Set the Coordinate Reference System (CRS) of a UGRID topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_crs.html#xugrid.UgridDatasetAccessor.to_crs" title="xugrid.UgridDatasetAccessor.to_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.to_crs</span></code></a>([crs, epsg, ...])</p></td>
+<td><p>Transform geometries to a new coordinate reference system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.sel.html#xugrid.UgridDatasetAccessor.sel" title="xugrid.UgridDatasetAccessor.sel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.sel</span></code></a>([x, y])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.sel_points.html#xugrid.UgridDatasetAccessor.sel_points" title="xugrid.UgridDatasetAccessor.sel_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.sel_points</span></code></a>(x, y[, ...])</p></td>
+<td><p>Select points in the unstructured grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.rasterize.html#xugrid.UgridDatasetAccessor.rasterize" title="xugrid.UgridDatasetAccessor.rasterize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.rasterize</span></code></a>(resolution)</p></td>
+<td><p>Rasterize all face data on 2D unstructured grids by sampling.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.rasterize_like.html#xugrid.UgridDatasetAccessor.rasterize_like" title="xugrid.UgridDatasetAccessor.rasterize_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.rasterize_like</span></code></a>(other)</p></td>
+<td><p>Rasterize unstructured all face data on 2D unstructured grids by sampling on the x and y coordinates of <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_periodic.html#xugrid.UgridDatasetAccessor.to_periodic" title="xugrid.UgridDatasetAccessor.to_periodic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.to_periodic</span></code></a>()</p></td>
+<td><p>Convert every grid to a periodic grid, where the rightmost boundary shares its nodes with the leftmost boundary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_nonperiodic.html#xugrid.UgridDatasetAccessor.to_nonperiodic" title="xugrid.UgridDatasetAccessor.to_nonperiodic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.to_nonperiodic</span></code></a>(xmax)</p></td>
+<td><p>Convert the grid from a periodic grid (where the rightmost boundary shares its nodes with the leftmost boundary) to an aperiodic grid, where the leftmost nodes are separate from the rightmost nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.intersect_line.html#xugrid.UgridDatasetAccessor.intersect_line" title="xugrid.UgridDatasetAccessor.intersect_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.intersect_line</span></code></a>(start, end)</p></td>
+<td><p>Intersect a line with the grid of this data, and fetch the values of the intersected faces.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.intersect_linestring.html#xugrid.UgridDatasetAccessor.intersect_linestring" title="xugrid.UgridDatasetAccessor.intersect_linestring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.intersect_linestring</span></code></a>(...)</p></td>
+<td><p>Intersect the grid along a collection of linestrings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.partition.html#xugrid.UgridDatasetAccessor.partition" title="xugrid.UgridDatasetAccessor.partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.partition</span></code></a>(n_part)</p></td>
+<td><p>Partition a grid into a given number of parts.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.partition_by_label.html#xugrid.UgridDatasetAccessor.partition_by_label" title="xugrid.UgridDatasetAccessor.partition_by_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.partition_by_label</span></code></a>(labels)</p></td>
+<td><p>Partition a grid by labels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.reindex_like.html#xugrid.UgridDatasetAccessor.reindex_like" title="xugrid.UgridDatasetAccessor.reindex_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.reindex_like</span></code></a>(other[, ...])</p></td>
+<td><p>Conform this object to match the topology of another object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_geodataframe.html#xugrid.UgridDatasetAccessor.to_geodataframe" title="xugrid.UgridDatasetAccessor.to_geodataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.to_geodataframe</span></code></a>([dim_order])</p></td>
+<td><p>Convert data and topology of one facet (node, edge, face) of the grid to a geopandas GeoDataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_dataset.html#xugrid.UgridDatasetAccessor.to_dataset" title="xugrid.UgridDatasetAccessor.to_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.to_dataset</span></code></a>([...])</p></td>
+<td><p>Convert this UgridDataset into a standard xarray.Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_netcdf.html#xugrid.UgridDatasetAccessor.to_netcdf" title="xugrid.UgridDatasetAccessor.to_netcdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.to_netcdf</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Write dataset contents to a UGRID compliant netCDF file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDatasetAccessor.to_zarr.html#xugrid.UgridDatasetAccessor.to_zarr" title="xugrid.UgridDatasetAccessor.to_zarr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDatasetAccessor.to_zarr</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Write dataset contents to a UGRID compliant Zarr file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.html#xugrid.UgridDataArrayAccessor" title="xugrid.UgridDataArrayAccessor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor</span></code></a>(obj, grid)</p></td>
+<td><p>This &quot;accessor&quot; makes operations using the UGRID topology available via the <code class="docutils literal notranslate"><span class="pre">.ugrid</span></code> attribute for UgridDataArrays and UgridDatasets.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.assign_node_coords.html#xugrid.UgridDataArrayAccessor.assign_node_coords" title="xugrid.UgridDataArrayAccessor.assign_node_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.assign_node_coords</span></code></a>()</p></td>
+<td><p>Assign node coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.assign_edge_coords.html#xugrid.UgridDataArrayAccessor.assign_edge_coords" title="xugrid.UgridDataArrayAccessor.assign_edge_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.assign_edge_coords</span></code></a>()</p></td>
+<td><p>Assign edge coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.assign_face_coords.html#xugrid.UgridDataArrayAccessor.assign_face_coords" title="xugrid.UgridDataArrayAccessor.assign_face_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.assign_face_coords</span></code></a>()</p></td>
+<td><p>Assign face coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.set_node_coords.html#xugrid.UgridDataArrayAccessor.set_node_coords" title="xugrid.UgridDataArrayAccessor.set_node_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.set_node_coords</span></code></a>(...)</p></td>
+<td><p>Given names of x and y coordinates of the nodes of an object, set them as the coordinates in the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.grids.html#xugrid.UgridDataArrayAccessor.grids" title="xugrid.UgridDataArrayAccessor.grids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.grids</span></code></a></p></td>
+<td><p>The UGRID topology of this DataArry, as a list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.name.html#xugrid.UgridDataArrayAccessor.name" title="xugrid.UgridDataArrayAccessor.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.name</span></code></a></p></td>
+<td><p>Name of the UGRID topology of this DataArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.names.html#xugrid.UgridDataArrayAccessor.names" title="xugrid.UgridDataArrayAccessor.names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.names</span></code></a></p></td>
+<td><p>Name of the UGRID topology, as a list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.topology.html#xugrid.UgridDataArrayAccessor.topology" title="xugrid.UgridDataArrayAccessor.topology"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.topology</span></code></a></p></td>
+<td><p>Mapping from name to UGRID topology.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.bounds.html#xugrid.UgridDataArrayAccessor.bounds" title="xugrid.UgridDataArrayAccessor.bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.bounds</span></code></a></p></td>
+<td><p>Mapping from grid name to tuple containing <code class="docutils literal notranslate"><span class="pre">minx,</span> <span class="pre">miny,</span> <span class="pre">maxx,</span> <span class="pre">maxy</span></code> values of the grid's node coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.total_bounds.html#xugrid.UgridDataArrayAccessor.total_bounds" title="xugrid.UgridDataArrayAccessor.total_bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.total_bounds</span></code></a></p></td>
+<td><p>Returns a tuple containing <code class="docutils literal notranslate"><span class="pre">minx,</span> <span class="pre">miny,</span> <span class="pre">maxx,</span> <span class="pre">maxy</span></code> values of the grid's node coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.crs.html#xugrid.UgridDataArrayAccessor.crs" title="xugrid.UgridDataArrayAccessor.crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.crs</span></code></a></p></td>
+<td><p>The Coordinate Reference System (CRS) represented as a <code class="docutils literal notranslate"><span class="pre">pyproj.CRS</span></code> object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.rename.html#xugrid.UgridDataArrayAccessor.rename" title="xugrid.UgridDataArrayAccessor.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.rename</span></code></a>(name)</p></td>
+<td><p>Give a new name to the UGRID topology and update the associated coordinate and dimension names in the DataArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.set_crs.html#xugrid.UgridDataArrayAccessor.set_crs" title="xugrid.UgridDataArrayAccessor.set_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.set_crs</span></code></a>([crs, epsg, ...])</p></td>
+<td><p>Set the Coordinate Reference System (CRS) of a UGRID topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_crs.html#xugrid.UgridDataArrayAccessor.to_crs" title="xugrid.UgridDataArrayAccessor.to_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_crs</span></code></a>([crs, epsg])</p></td>
+<td><p>Transform geometries to a new coordinate reference system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.sel.html#xugrid.UgridDataArrayAccessor.sel" title="xugrid.UgridDataArrayAccessor.sel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.sel</span></code></a>([x, y])</p></td>
+<td><p>Return a new object, a subselection in the UGRID x and y coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.sel_points.html#xugrid.UgridDataArrayAccessor.sel_points" title="xugrid.UgridDataArrayAccessor.sel_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.sel_points</span></code></a>(x, y[, ...])</p></td>
+<td><p>Select points in the unstructured grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.intersect_line.html#xugrid.UgridDataArrayAccessor.intersect_line" title="xugrid.UgridDataArrayAccessor.intersect_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.intersect_line</span></code></a>(start, end)</p></td>
+<td><p>Intersect a line with the grid of this data, and fetch the values of the intersected faces.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.intersect_linestring.html#xugrid.UgridDataArrayAccessor.intersect_linestring" title="xugrid.UgridDataArrayAccessor.intersect_linestring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.intersect_linestring</span></code></a>(...)</p></td>
+<td><p>Intersect the grid along a collection of linestrings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.label_partitions.html#xugrid.UgridDataArrayAccessor.label_partitions" title="xugrid.UgridDataArrayAccessor.label_partitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.label_partitions</span></code></a>(n_part)</p></td>
+<td><p>Generate partition labels for this grid topology using METIS: <a class="github reference external" href="https://github.com/KarypisLab/METIS">KarypisLab/METIS</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.partition.html#xugrid.UgridDataArrayAccessor.partition" title="xugrid.UgridDataArrayAccessor.partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.partition</span></code></a>(n_part)</p></td>
+<td><p>Partition a grid into a given number of parts.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.partition_by_label.html#xugrid.UgridDataArrayAccessor.partition_by_label" title="xugrid.UgridDataArrayAccessor.partition_by_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.partition_by_label</span></code></a>(labels)</p></td>
+<td><p>Partition a grid by labels.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.rasterize.html#xugrid.UgridDataArrayAccessor.rasterize" title="xugrid.UgridDataArrayAccessor.rasterize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.rasterize</span></code></a>(resolution)</p></td>
+<td><p>Rasterize unstructured grid by sampling.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.rasterize_like.html#xugrid.UgridDataArrayAccessor.rasterize_like" title="xugrid.UgridDataArrayAccessor.rasterize_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.rasterize_like</span></code></a>(other)</p></td>
+<td><p>Rasterize unstructured grid by sampling on the x and y coordinates of <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.reindex_like.html#xugrid.UgridDataArrayAccessor.reindex_like" title="xugrid.UgridDataArrayAccessor.reindex_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.reindex_like</span></code></a>(other[, ...])</p></td>
+<td><p>Conform this object to match the topology of another object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_node.html#xugrid.UgridDataArrayAccessor.to_node" title="xugrid.UgridDataArrayAccessor.to_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_node</span></code></a>([dim])</p></td>
+<td><p>Map data to nodes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_edge.html#xugrid.UgridDataArrayAccessor.to_edge" title="xugrid.UgridDataArrayAccessor.to_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_edge</span></code></a>([dim])</p></td>
+<td><p>Map data to edges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_face.html#xugrid.UgridDataArrayAccessor.to_face" title="xugrid.UgridDataArrayAccessor.to_face"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_face</span></code></a>([dim])</p></td>
+<td><p>Map data to faces.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_periodic.html#xugrid.UgridDataArrayAccessor.to_periodic" title="xugrid.UgridDataArrayAccessor.to_periodic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_periodic</span></code></a>()</p></td>
+<td><p>Convert this grid to a periodic grid, where the rightmost boundary shares its nodes with the leftmost boundary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_nonperiodic.html#xugrid.UgridDataArrayAccessor.to_nonperiodic" title="xugrid.UgridDataArrayAccessor.to_nonperiodic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_nonperiodic</span></code></a>(xmax)</p></td>
+<td><p>Convert this grid from a periodic grid (where the rightmost boundary shares its nodes with the leftmost boundary) to an aperiodic grid, where the leftmost nodes are separate from the rightmost nodes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_geodataframe.html#xugrid.UgridDataArrayAccessor.to_geodataframe" title="xugrid.UgridDataArrayAccessor.to_geodataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_geodataframe</span></code></a>([...])</p></td>
+<td><p>Convert data and topology of one facet (node, edge, face) of the grid to a geopandas GeoDataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.binary_dilation.html#xugrid.UgridDataArrayAccessor.binary_dilation" title="xugrid.UgridDataArrayAccessor.binary_dilation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.binary_dilation</span></code></a>([...])</p></td>
+<td><p>Binary dilation can be used on a boolean array to expand the &quot;shape&quot; of features.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.binary_erosion.html#xugrid.UgridDataArrayAccessor.binary_erosion" title="xugrid.UgridDataArrayAccessor.binary_erosion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.binary_erosion</span></code></a>([...])</p></td>
+<td><p>Binary erosion can be used on a boolean array to shrink the &quot;shape&quot; of features.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.connected_components.html#xugrid.UgridDataArrayAccessor.connected_components" title="xugrid.UgridDataArrayAccessor.connected_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.connected_components</span></code></a>()</p></td>
+<td><p>Every edge or face is given a component number.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee.html#xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee" title="xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.reverse_cuthill_mckee</span></code></a>()</p></td>
+<td><p>Reduces bandwith of the connectivity matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.interpolate_na.html#xugrid.UgridDataArrayAccessor.interpolate_na" title="xugrid.UgridDataArrayAccessor.interpolate_na"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.interpolate_na</span></code></a>([...])</p></td>
+<td><p>Fill in NaNs by interpolating.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.laplace_interpolate.html#xugrid.UgridDataArrayAccessor.laplace_interpolate" title="xugrid.UgridDataArrayAccessor.laplace_interpolate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.laplace_interpolate</span></code></a>([...])</p></td>
+<td><p>Fill in NaNs by using Laplace interpolation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_dataset.html#xugrid.UgridDataArrayAccessor.to_dataset" title="xugrid.UgridDataArrayAccessor.to_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_dataset</span></code></a>([...])</p></td>
+<td><p>Convert this UgridDataArray or UgridDataset into a standard xarray.Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_netcdf.html#xugrid.UgridDataArrayAccessor.to_netcdf" title="xugrid.UgridDataArrayAccessor.to_netcdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_netcdf</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Write dataset contents to a UGRID compliant netCDF file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridDataArrayAccessor.to_zarr.html#xugrid.UgridDataArrayAccessor.to_zarr" title="xugrid.UgridDataArrayAccessor.to_zarr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridDataArrayAccessor.to_zarr</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Write dataset contents to a UGRID compliant Zarr file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="snapping">
+<h2>Snapping<a class="headerlink" href="#snapping" title="Link to this heading">#</a></h2>
+<p>Snapping is the process of moving nodes/edges/faces to other
+nodes/edges/faces if within a certain range.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.snap_nodes.html#xugrid.snap_nodes" title="xugrid.snap_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">snap_nodes</span></code></a>(x, y, max_snap_distance)</p></td>
+<td><p>Snap neigbhoring vertices together that are located within a maximum snapping distance from each other.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.snap_to_grid.html#xugrid.snap_to_grid" title="xugrid.snap_to_grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">snap_to_grid</span></code></a>(lines, grid, max_snap_distance)</p></td>
+<td><p>Snap a collection of lines to a grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.create_snap_to_grid_dataframe.html#xugrid.create_snap_to_grid_dataframe" title="xugrid.create_snap_to_grid_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_snap_to_grid_dataframe</span></code></a>(lines, grid, ...)</p></td>
+<td><p>Create a dataframe required to snap line geometries to a Ugrid2d topology.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="regridding">
+<h2>Regridding<a class="headerlink" href="#regridding" title="Link to this heading">#</a></h2>
+<p>Regridding is the process of converting gridded data from one grid to another
+grid. Xugrid provides tools for 2D and 3D regridding of structured gridded
+data, represented as xarray objects, as well as (layered) unstructured gridded
+data, represented as xugrid objects.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.BarycentricInterpolator.html#xugrid.BarycentricInterpolator" title="xugrid.BarycentricInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BarycentricInterpolator</span></code></a>(source, target[, ...])</p></td>
+<td><p>The BaryCentricInterpolator searches the centroid of every face of the target grid in the source grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.CentroidLocatorRegridder.html#xugrid.CentroidLocatorRegridder" title="xugrid.CentroidLocatorRegridder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CentroidLocatorRegridder</span></code></a>(source, target[, ...])</p></td>
+<td><p>The CentroidLocatorRegridded regrids by searching the source grid for the centroids of the target grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.OverlapRegridder.html#xugrid.OverlapRegridder" title="xugrid.OverlapRegridder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OverlapRegridder</span></code></a>(source, target[, method])</p></td>
+<td><p>The OverlapRegridder regrids by computing which target faces overlap with which source faces.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.RelativeOverlapRegridder.html#xugrid.RelativeOverlapRegridder" title="xugrid.RelativeOverlapRegridder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelativeOverlapRegridder</span></code></a>(source, target[, ...])</p></td>
+<td><p>The RelativeOverlapRegridder regrids by computing which target faces overlap with which source faces.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="gridding">
+<h2>Gridding<a class="headerlink" href="#gridding" title="Link to this heading">#</a></h2>
+<p>Gridding is the process of converting a network of line elements (UGRID1D) to 2D
+grids, either structured or unstructured (UGRID2D).</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.NetworkGridder.html#xugrid.NetworkGridder" title="xugrid.NetworkGridder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NetworkGridder</span></code></a>(source, target[, method])</p></td>
+<td><p>Network gridder for 2D unstructured grids.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h2>
+<p>These methods are also available under the <code class="docutils literal notranslate"><span class="pre">.ugrid.plot</span></code> attribute of a
+UgridDataArray.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.plot.contour.html#xugrid.plot.contour" title="xugrid.plot.contour"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.contour</span></code></a>(topology, darray, **kwargs)</p></td>
+<td><p>Create a contour plot of a 2D UgridDataArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.plot.contourf.html#xugrid.plot.contourf" title="xugrid.plot.contourf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.contourf</span></code></a>(topology, darray, **kwargs)</p></td>
+<td><p>Create a filled contour plot of a 2D UgridDataArray.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.plot.imshow.html#xugrid.plot.imshow" title="xugrid.plot.imshow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.imshow</span></code></a>(topology, darray, **kwargs)</p></td>
+<td><p>Image plot of 2D DataArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.plot.line.html#xugrid.plot.line" title="xugrid.plot.line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.line</span></code></a>(topology, darray, **kwargs)</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.plot.pcolormesh.html#xugrid.plot.pcolormesh" title="xugrid.plot.pcolormesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.pcolormesh</span></code></a>(topology, darray, **kwargs)</p></td>
+<td><p>Create a pseudocolor mesh plot of a 2D UgridDataArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.plot.scatter.html#xugrid.plot.scatter" title="xugrid.plot.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.scatter</span></code></a>(topology, darray, **kwargs)</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.plot.surface.html#xugrid.plot.surface" title="xugrid.plot.surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.surface</span></code></a>(topology, darray, **kwargs)</p></td>
+<td><p>Create a surface plot of a 2D UgridDataArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.plot.tripcolor.html#xugrid.plot.tripcolor" title="xugrid.plot.tripcolor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot.tripcolor</span></code></a>(topology, darray, **kwargs)</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ugrid1d-topology">
+<h2>UGRID1D Topology<a class="headerlink" href="#ugrid1d-topology" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.html#xugrid.Ugrid1d" title="xugrid.Ugrid1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d</span></code></a>(node_x, node_y, fill_value[, ...])</p></td>
+<td><p>This class stores the topological data of a &quot;1-D unstructured grid&quot;: a collection of connected line elements, such as a river network.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.topology_dimension.html#xugrid.Ugrid1d.topology_dimension" title="xugrid.Ugrid1d.topology_dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.topology_dimension</span></code></a></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.dims.html#xugrid.Ugrid1d.dims" title="xugrid.Ugrid1d.dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.dims</span></code></a></p></td>
+<td><p>node dimension, edge dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.sizes.html#xugrid.Ugrid1d.sizes" title="xugrid.Ugrid1d.sizes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.sizes</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.attrs.html#xugrid.Ugrid1d.attrs" title="xugrid.Ugrid1d.attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.attrs</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.coords.html#xugrid.Ugrid1d.coords" title="xugrid.Ugrid1d.coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.coords</span></code></a></p></td>
+<td><p>Dictionary for grid coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.fill_value.html#xugrid.Ugrid1d.fill_value" title="xugrid.Ugrid1d.fill_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.fill_value</span></code></a></p></td>
+<td><p>Fill value for UGRID connectivity arrays.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.start_index.html#xugrid.Ugrid1d.start_index" title="xugrid.Ugrid1d.start_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.start_index</span></code></a></p></td>
+<td><p>Start index for UGRID connectivity arrays.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.n_node.html#xugrid.Ugrid1d.n_node" title="xugrid.Ugrid1d.n_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.n_node</span></code></a></p></td>
+<td><p>Number of nodes (vertices) in the UGRID topology</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.node_dimension.html#xugrid.Ugrid1d.node_dimension" title="xugrid.Ugrid1d.node_dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.node_dimension</span></code></a></p></td>
+<td><p>Name of node dimension</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.node_coordinates.html#xugrid.Ugrid1d.node_coordinates" title="xugrid.Ugrid1d.node_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.node_coordinates</span></code></a></p></td>
+<td><p>Coordinates (x, y) of the nodes (vertices)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.set_node_coords.html#xugrid.Ugrid1d.set_node_coords" title="xugrid.Ugrid1d.set_node_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.set_node_coords</span></code></a>(node_x, node_y, obj)</p></td>
+<td><p>Given names of x and y coordinates of the nodes of an object, set them as the coordinates in the grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.assign_node_coords.html#xugrid.Ugrid1d.assign_node_coords" title="xugrid.Ugrid1d.assign_node_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.assign_node_coords</span></code></a>(obj)</p></td>
+<td><p>Assign node coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.assign_edge_coords.html#xugrid.Ugrid1d.assign_edge_coords" title="xugrid.Ugrid1d.assign_edge_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.assign_edge_coords</span></code></a>(obj)</p></td>
+<td><p>Assign node coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.get_coordinates.html#xugrid.Ugrid1d.get_coordinates" title="xugrid.Ugrid1d.get_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.get_coordinates</span></code></a>(dim)</p></td>
+<td><p>Return the coordinates for the specified UGRID dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.n_edge.html#xugrid.Ugrid1d.n_edge" title="xugrid.Ugrid1d.n_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.n_edge</span></code></a></p></td>
+<td><p>Number of edges in the UGRID topology</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.edge_dimension.html#xugrid.Ugrid1d.edge_dimension" title="xugrid.Ugrid1d.edge_dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.edge_dimension</span></code></a></p></td>
+<td><p>Name of edge dimension</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.edge_coordinates.html#xugrid.Ugrid1d.edge_coordinates" title="xugrid.Ugrid1d.edge_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.edge_coordinates</span></code></a></p></td>
+<td><p>Centroid (x,y) coordinates of every edge in the UGRID topology</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.edge_x.html#xugrid.Ugrid1d.edge_x" title="xugrid.Ugrid1d.edge_x"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.edge_x</span></code></a></p></td>
+<td><p>x-coordinate of every edge in the UGRID topology</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.edge_y.html#xugrid.Ugrid1d.edge_y" title="xugrid.Ugrid1d.edge_y"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.edge_y</span></code></a></p></td>
+<td><p>y-coordinate of every edge in the UGRID topology</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.bounds.html#xugrid.Ugrid1d.bounds" title="xugrid.Ugrid1d.bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.bounds</span></code></a></p></td>
+<td><p>xmin, ymin, xmax, ymax</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.edge_bounds.html#xugrid.Ugrid1d.edge_bounds" title="xugrid.Ugrid1d.edge_bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.edge_bounds</span></code></a></p></td>
+<td><p>Returns a numpy array with columns <code class="docutils literal notranslate"><span class="pre">minx,</span> <span class="pre">miny,</span> <span class="pre">maxx,</span> <span class="pre">maxy</span></code>, describing the bounds of every edge in the grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.edge_length.html#xugrid.Ugrid1d.edge_length" title="xugrid.Ugrid1d.edge_length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.edge_length</span></code></a></p></td>
+<td><p>Length of each edge.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.node_edge_connectivity.html#xugrid.Ugrid1d.node_edge_connectivity" title="xugrid.Ugrid1d.node_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.node_edge_connectivity</span></code></a></p></td>
+<td><p>Node to edge connectivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.node_node_connectivity.html#xugrid.Ugrid1d.node_node_connectivity" title="xugrid.Ugrid1d.node_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.node_node_connectivity</span></code></a></p></td>
+<td><p>Node to node connectivity.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.edge_edge_connectivity.html#xugrid.Ugrid1d.edge_edge_connectivity" title="xugrid.Ugrid1d.edge_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.edge_edge_connectivity</span></code></a></p></td>
+<td><p>Edge to edge connectivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.directed_node_node_connectivity.html#xugrid.Ugrid1d.directed_node_node_connectivity" title="xugrid.Ugrid1d.directed_node_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.directed_node_node_connectivity</span></code></a></p></td>
+<td><p>Directed node to node connectivity.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.directed_edge_edge_connectivity.html#xugrid.Ugrid1d.directed_edge_edge_connectivity" title="xugrid.Ugrid1d.directed_edge_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.directed_edge_edge_connectivity</span></code></a></p></td>
+<td><p>Directed edge to edge connectivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.get_connectivity_matrix.html#xugrid.Ugrid1d.get_connectivity_matrix" title="xugrid.Ugrid1d.get_connectivity_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.get_connectivity_matrix</span></code></a>(dim, xy_weights)</p></td>
+<td><p>Return the connectivity matrix for the specified UGRID dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.is_cyclic.html#xugrid.Ugrid1d.is_cyclic" title="xugrid.Ugrid1d.is_cyclic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.is_cyclic</span></code></a></p></td>
+<td><p>Return True if the directed node node connectivity contains cycles.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.format_connectivity_as_dense.html#xugrid.Ugrid1d.format_connectivity_as_dense" title="xugrid.Ugrid1d.format_connectivity_as_dense"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.format_connectivity_as_dense</span></code></a>(...)</p></td>
+<td><p>Return a rectangular representation of a sparse (CSR or COO) connectivity array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.format_connectivity_as_sparse.html#xugrid.Ugrid1d.format_connectivity_as_sparse" title="xugrid.Ugrid1d.format_connectivity_as_sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.format_connectivity_as_sparse</span></code></a>(...)</p></td>
+<td><p>Convert a rectangular dense connectivity array to a sparse CSR matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.refine_by_vertices.html#xugrid.Ugrid1d.refine_by_vertices" title="xugrid.Ugrid1d.refine_by_vertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.refine_by_vertices</span></code></a>(vertices[, ...])</p></td>
+<td><p>Refine Ugrid1d with extra vertices to be inserted and returns new grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.copy.html#xugrid.Ugrid1d.copy" title="xugrid.Ugrid1d.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.copy</span></code></a>()</p></td>
+<td><p>Create a deepcopy.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.rename.html#xugrid.Ugrid1d.rename" title="xugrid.Ugrid1d.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.rename</span></code></a>(name[, return_name_dict])</p></td>
+<td><p>Create a new grid with all variables named according to the default naming conventions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.isel.html#xugrid.Ugrid1d.isel" title="xugrid.Ugrid1d.isel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.isel</span></code></a>([indexers, return_index])</p></td>
+<td><p>Select based on node or edge.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.sel.html#xugrid.Ugrid1d.sel" title="xugrid.Ugrid1d.sel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.sel</span></code></a>(obj, x, y)</p></td>
+<td><p>Select a selection of edges, based on edge centroids.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.sel_points.html#xugrid.Ugrid1d.sel_points" title="xugrid.Ugrid1d.sel_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.sel_points</span></code></a>(obj, x, y[, ...])</p></td>
+<td><p>Select points in the unstructured grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.intersect_line.html#xugrid.Ugrid1d.intersect_line" title="xugrid.Ugrid1d.intersect_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.intersect_line</span></code></a>(obj, start, end)</p></td>
+<td><p>Intersect a line with this grid, and fetch the values of the intersected faces.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.intersect_linestring.html#xugrid.Ugrid1d.intersect_linestring" title="xugrid.Ugrid1d.intersect_linestring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.intersect_linestring</span></code></a>(obj, linestring)</p></td>
+<td><p>Intersect linestrings with this grid, and fetch the values of the intersected faces.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.celltree.html#xugrid.Ugrid1d.celltree" title="xugrid.Ugrid1d.celltree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.celltree</span></code></a></p></td>
+<td><p>Initializes the celltree if needed, and returns celltree.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.node_kdtree.html#xugrid.Ugrid1d.node_kdtree" title="xugrid.Ugrid1d.node_kdtree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.node_kdtree</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.edge_kdtree.html#xugrid.Ugrid1d.edge_kdtree" title="xugrid.Ugrid1d.edge_kdtree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.edge_kdtree</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.locate_nearest_node.html#xugrid.Ugrid1d.locate_nearest_node" title="xugrid.Ugrid1d.locate_nearest_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.locate_nearest_node</span></code></a>(points[, ...])</p></td>
+<td><p>Find which grid node is nearest for a collection of points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.locate_nearest_edge.html#xugrid.Ugrid1d.locate_nearest_edge" title="xugrid.Ugrid1d.locate_nearest_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.locate_nearest_edge</span></code></a>(points[, ...])</p></td>
+<td><p>Find which grid node is nearest for a collection of points.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.locate_points.html#xugrid.Ugrid1d.locate_points" title="xugrid.Ugrid1d.locate_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.locate_points</span></code></a>(points[, tolerance])</p></td>
+<td><p>Find on which edge points are located.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.intersect_edges.html#xugrid.Ugrid1d.intersect_edges" title="xugrid.Ugrid1d.intersect_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.intersect_edges</span></code></a>(edges)</p></td>
+<td><p>Find in which grid edges are edges are located and compute the intersection with the edges.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.topology_subset.html#xugrid.Ugrid1d.topology_subset" title="xugrid.Ugrid1d.topology_subset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.topology_subset</span></code></a>(edge_index[, ...])</p></td>
+<td><p>Create a new UGRID1D topology for a subset of this topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.merge_partitions.html#xugrid.Ugrid1d.merge_partitions" title="xugrid.Ugrid1d.merge_partitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.merge_partitions</span></code></a>(grids)</p></td>
+<td><p>Merge grid partitions into a single whole.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.topological_sort_by_dfs.html#xugrid.Ugrid1d.topological_sort_by_dfs" title="xugrid.Ugrid1d.topological_sort_by_dfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.topological_sort_by_dfs</span></code></a>()</p></td>
+<td><p>Return an array of vertices in topological order.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.contract_vertices.html#xugrid.Ugrid1d.contract_vertices" title="xugrid.Ugrid1d.contract_vertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.contract_vertices</span></code></a>(indices)</p></td>
+<td><p>Return a simplified network topology by removing all nodes that are not listed in <code class="docutils literal notranslate"><span class="pre">indices</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.remove_self_loops.html#xugrid.Ugrid1d.remove_self_loops" title="xugrid.Ugrid1d.remove_self_loops"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.remove_self_loops</span></code></a>()</p></td>
+<td><p>Remove degenerate edges: those that join a node to itself, also called a self-loop.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.reindex_like.html#xugrid.Ugrid1d.reindex_like" title="xugrid.Ugrid1d.reindex_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.reindex_like</span></code></a>(other, obj[, tolerance])</p></td>
+<td><p>Conform a DataArray or Dataset to match the topology of another Ugrid1D topology.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.from_meshkernel.html#xugrid.Ugrid1d.from_meshkernel" title="xugrid.Ugrid1d.from_meshkernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.from_meshkernel</span></code></a>(mesh[, name, ...])</p></td>
+<td><p>Create a 1D UGRID topology from a MeshKernel Mesh1d object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.mesh.html#xugrid.Ugrid1d.mesh" title="xugrid.Ugrid1d.mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.mesh</span></code></a></p></td>
+<td><p>Create if needed, and return meshkernel Mesh1d object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.meshkernel.html#xugrid.Ugrid1d.meshkernel" title="xugrid.Ugrid1d.meshkernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.meshkernel</span></code></a></p></td>
+<td><p>Create if needed, and return meshkernel MeshKernel instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.set_crs.html#xugrid.Ugrid1d.set_crs" title="xugrid.Ugrid1d.set_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.set_crs</span></code></a>([crs, epsg, allow_override])</p></td>
+<td><p>Set the Coordinate Reference System (CRS) of a UGRID topology.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.to_crs.html#xugrid.Ugrid1d.to_crs" title="xugrid.Ugrid1d.to_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.to_crs</span></code></a>([crs, epsg])</p></td>
+<td><p>Transform geometries to a new coordinate reference system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.from_dataset.html#xugrid.Ugrid1d.from_dataset" title="xugrid.Ugrid1d.from_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.from_dataset</span></code></a>(dataset[, topology])</p></td>
+<td><p>Extract the 1D UGRID topology information from an xarray Dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.to_dataset.html#xugrid.Ugrid1d.to_dataset" title="xugrid.Ugrid1d.to_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.to_dataset</span></code></a>([other, optional_attributes])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.from_geodataframe.html#xugrid.Ugrid1d.from_geodataframe" title="xugrid.Ugrid1d.from_geodataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.from_geodataframe</span></code></a>(geodataframe)</p></td>
+<td><p>Convert geodataframe of linestrings into a UGRID1D topology.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.from_shapely.html#xugrid.Ugrid1d.from_shapely" title="xugrid.Ugrid1d.from_shapely"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.from_shapely</span></code></a>(geometry[, crs])</p></td>
+<td><p>Convert an array of shapely linestrings to UGRID1D topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.to_shapely.html#xugrid.Ugrid1d.to_shapely" title="xugrid.Ugrid1d.to_shapely"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.to_shapely</span></code></a>(dim)</p></td>
+<td><p>Convert UGRID topology to shapely objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.create_data_array.html#xugrid.Ugrid1d.create_data_array" title="xugrid.Ugrid1d.create_data_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.create_data_array</span></code></a>(data, facet)</p></td>
+<td><p>Create a UgridDataArray from this grid and a 1D array of values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid1d.plot.html#xugrid.Ugrid1d.plot" title="xugrid.Ugrid1d.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid1d.plot</span></code></a>(**kwargs)</p></td>
+<td><p>Plot the edges of the mesh.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ugrid2d-topology">
+<h2>UGRID2D Topology<a class="headerlink" href="#ugrid2d-topology" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.html#xugrid.Ugrid2d" title="xugrid.Ugrid2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d</span></code></a>(node_x, node_y, fill_value, ...[, ...])</p></td>
+<td><p>This class stores the topological data of a 2-D unstructured grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.topology_dimension.html#xugrid.Ugrid2d.topology_dimension" title="xugrid.Ugrid2d.topology_dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.topology_dimension</span></code></a></p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.dims.html#xugrid.Ugrid2d.dims" title="xugrid.Ugrid2d.dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.dims</span></code></a></p></td>
+<td><p>node dimension, edge dimension, face_dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.sizes.html#xugrid.Ugrid2d.sizes" title="xugrid.Ugrid2d.sizes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.sizes</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.attrs.html#xugrid.Ugrid2d.attrs" title="xugrid.Ugrid2d.attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.attrs</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.coords.html#xugrid.Ugrid2d.coords" title="xugrid.Ugrid2d.coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.coords</span></code></a></p></td>
+<td><p>Dictionary for grid coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.fill_value.html#xugrid.Ugrid2d.fill_value" title="xugrid.Ugrid2d.fill_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.fill_value</span></code></a></p></td>
+<td><p>Fill value for UGRID connectivity arrays.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.start_index.html#xugrid.Ugrid2d.start_index" title="xugrid.Ugrid2d.start_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.start_index</span></code></a></p></td>
+<td><p>Start index for UGRID connectivity arrays.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.n_node.html#xugrid.Ugrid2d.n_node" title="xugrid.Ugrid2d.n_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.n_node</span></code></a></p></td>
+<td><p>Number of nodes (vertices) in the UGRID topology</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.node_dimension.html#xugrid.Ugrid2d.node_dimension" title="xugrid.Ugrid2d.node_dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.node_dimension</span></code></a></p></td>
+<td><p>Name of node dimension</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.node_coordinates.html#xugrid.Ugrid2d.node_coordinates" title="xugrid.Ugrid2d.node_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.node_coordinates</span></code></a></p></td>
+<td><p>Coordinates (x, y) of the nodes (vertices)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.set_node_coords.html#xugrid.Ugrid2d.set_node_coords" title="xugrid.Ugrid2d.set_node_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.set_node_coords</span></code></a>(node_x, node_y, obj)</p></td>
+<td><p>Given names of x and y coordinates of the nodes of an object, set them as the coordinates in the grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.assign_node_coords.html#xugrid.Ugrid2d.assign_node_coords" title="xugrid.Ugrid2d.assign_node_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.assign_node_coords</span></code></a>(obj)</p></td>
+<td><p>Assign node coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.assign_edge_coords.html#xugrid.Ugrid2d.assign_edge_coords" title="xugrid.Ugrid2d.assign_edge_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.assign_edge_coords</span></code></a>(obj)</p></td>
+<td><p>Assign node coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.assign_face_coords.html#xugrid.Ugrid2d.assign_face_coords" title="xugrid.Ugrid2d.assign_face_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.assign_face_coords</span></code></a>(obj)</p></td>
+<td><p>Assign face coordinates from the grid to the object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.get_coordinates.html#xugrid.Ugrid2d.get_coordinates" title="xugrid.Ugrid2d.get_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.get_coordinates</span></code></a>(dim)</p></td>
+<td><p>Return the coordinates for the specified UGRID dimension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.n_edge.html#xugrid.Ugrid2d.n_edge" title="xugrid.Ugrid2d.n_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.n_edge</span></code></a></p></td>
+<td><p>Number of edges in the UGRID topology</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.edge_dimension.html#xugrid.Ugrid2d.edge_dimension" title="xugrid.Ugrid2d.edge_dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.edge_dimension</span></code></a></p></td>
+<td><p>Name of edge dimension</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.edge_coordinates.html#xugrid.Ugrid2d.edge_coordinates" title="xugrid.Ugrid2d.edge_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.edge_coordinates</span></code></a></p></td>
+<td><p>Centroid (x,y) coordinates of every edge in the UGRID topology</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.edge_x.html#xugrid.Ugrid2d.edge_x" title="xugrid.Ugrid2d.edge_x"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.edge_x</span></code></a></p></td>
+<td><p>x-coordinate of every edge in the UGRID topology</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.edge_y.html#xugrid.Ugrid2d.edge_y" title="xugrid.Ugrid2d.edge_y"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.edge_y</span></code></a></p></td>
+<td><p>y-coordinate of every edge in the UGRID topology</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.edge_length.html#xugrid.Ugrid2d.edge_length" title="xugrid.Ugrid2d.edge_length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.edge_length</span></code></a></p></td>
+<td><p>Length of each edge.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.n_face.html#xugrid.Ugrid2d.n_face" title="xugrid.Ugrid2d.n_face"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.n_face</span></code></a></p></td>
+<td><p>Return the number of faces in the UGRID2D topology.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.face_dimension.html#xugrid.Ugrid2d.face_dimension" title="xugrid.Ugrid2d.face_dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.face_dimension</span></code></a></p></td>
+<td><p>Return the name of the face dimension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.face_coordinates.html#xugrid.Ugrid2d.face_coordinates" title="xugrid.Ugrid2d.face_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.face_coordinates</span></code></a></p></td>
+<td><p>Centroid (x, y) of every face.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.centroids.html#xugrid.Ugrid2d.centroids" title="xugrid.Ugrid2d.centroids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.centroids</span></code></a></p></td>
+<td><p>Centroid (x, y) of every face.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.circumcenters.html#xugrid.Ugrid2d.circumcenters" title="xugrid.Ugrid2d.circumcenters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.circumcenters</span></code></a></p></td>
+<td><p>Circumenter (x, y) of every face; only works for fully triangular grids.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.area.html#xugrid.Ugrid2d.area" title="xugrid.Ugrid2d.area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.area</span></code></a></p></td>
+<td><p>Area of every face.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.perimeter.html#xugrid.Ugrid2d.perimeter" title="xugrid.Ugrid2d.perimeter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.perimeter</span></code></a></p></td>
+<td><p>Perimeter length of every face.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.face_x.html#xugrid.Ugrid2d.face_x" title="xugrid.Ugrid2d.face_x"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.face_x</span></code></a></p></td>
+<td><p>x-coordinate of centroid of every face</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.face_y.html#xugrid.Ugrid2d.face_y" title="xugrid.Ugrid2d.face_y"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.face_y</span></code></a></p></td>
+<td><p>y-coordinate of centroid of every face</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.bounds.html#xugrid.Ugrid2d.bounds" title="xugrid.Ugrid2d.bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.bounds</span></code></a></p></td>
+<td><p>xmin, ymin, xmax, ymax</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.edge_bounds.html#xugrid.Ugrid2d.edge_bounds" title="xugrid.Ugrid2d.edge_bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.edge_bounds</span></code></a></p></td>
+<td><p>Returns a numpy array with columns <code class="docutils literal notranslate"><span class="pre">minx,</span> <span class="pre">miny,</span> <span class="pre">maxx,</span> <span class="pre">maxy</span></code>, describing the bounds of every edge in the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.face_bounds.html#xugrid.Ugrid2d.face_bounds" title="xugrid.Ugrid2d.face_bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.face_bounds</span></code></a></p></td>
+<td><p>Returns a numpy array with columns <code class="docutils literal notranslate"><span class="pre">minx,</span> <span class="pre">miny,</span> <span class="pre">maxx,</span> <span class="pre">maxy</span></code>, describing the bounds of every face in the grid.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.bounding_polygon.html#xugrid.Ugrid2d.bounding_polygon" title="xugrid.Ugrid2d.bounding_polygon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.bounding_polygon</span></code></a>()</p></td>
+<td><p>Construct the bounding polygon of the grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.node_node_connectivity.html#xugrid.Ugrid2d.node_node_connectivity" title="xugrid.Ugrid2d.node_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.node_node_connectivity</span></code></a></p></td>
+<td><p>Node to node connectivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.node_edge_connectivity.html#xugrid.Ugrid2d.node_edge_connectivity" title="xugrid.Ugrid2d.node_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.node_edge_connectivity</span></code></a></p></td>
+<td><p>Node to edge connectivity.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.node_face_connectivity.html#xugrid.Ugrid2d.node_face_connectivity" title="xugrid.Ugrid2d.node_face_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.node_face_connectivity</span></code></a></p></td>
+<td><p>Node to face connectivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.edge_node_connectivity.html#xugrid.Ugrid2d.edge_node_connectivity" title="xugrid.Ugrid2d.edge_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.edge_node_connectivity</span></code></a></p></td>
+<td><p>Edge to node connectivity.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.edge_edge_connectivity.html#xugrid.Ugrid2d.edge_edge_connectivity" title="xugrid.Ugrid2d.edge_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.edge_edge_connectivity</span></code></a></p></td>
+<td><p>Edge to edge connectivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.face_edge_connectivity.html#xugrid.Ugrid2d.face_edge_connectivity" title="xugrid.Ugrid2d.face_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.face_edge_connectivity</span></code></a></p></td>
+<td><p>Face to edge connectivity.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.face_face_connectivity.html#xugrid.Ugrid2d.face_face_connectivity" title="xugrid.Ugrid2d.face_face_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.face_face_connectivity</span></code></a></p></td>
+<td><p>Face to face connectivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.directed_node_node_connectivity.html#xugrid.Ugrid2d.directed_node_node_connectivity" title="xugrid.Ugrid2d.directed_node_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.directed_node_node_connectivity</span></code></a></p></td>
+<td><p>Directed node to node connectivity.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.directed_edge_edge_connectivity.html#xugrid.Ugrid2d.directed_edge_edge_connectivity" title="xugrid.Ugrid2d.directed_edge_edge_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.directed_edge_edge_connectivity</span></code></a></p></td>
+<td><p>Directed edge to edge connectivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.get_connectivity_matrix.html#xugrid.Ugrid2d.get_connectivity_matrix" title="xugrid.Ugrid2d.get_connectivity_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.get_connectivity_matrix</span></code></a>(dim, xy_weights)</p></td>
+<td><p>Return the connectivity matrix for the specified UGRID dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.format_connectivity_as_dense.html#xugrid.Ugrid2d.format_connectivity_as_dense" title="xugrid.Ugrid2d.format_connectivity_as_dense"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.format_connectivity_as_dense</span></code></a>(...)</p></td>
+<td><p>Return a rectangular representation of a sparse (CSR or COO) connectivity array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.format_connectivity_as_sparse.html#xugrid.Ugrid2d.format_connectivity_as_sparse" title="xugrid.Ugrid2d.format_connectivity_as_sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.format_connectivity_as_sparse</span></code></a>(...)</p></td>
+<td><p>Convert a rectangular dense connectivity array to a sparse CSR matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.validate_edge_node_connectivity.html#xugrid.Ugrid2d.validate_edge_node_connectivity" title="xugrid.Ugrid2d.validate_edge_node_connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.validate_edge_node_connectivity</span></code></a>()</p></td>
+<td><p>Mark valid edges, by comparing face_node_connectivity and edge_node_connectivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.exterior_edges.html#xugrid.Ugrid2d.exterior_edges" title="xugrid.Ugrid2d.exterior_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.exterior_edges</span></code></a></p></td>
+<td><p>Get all exterior edges, i.e. edges with no other face.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.exterior_faces.html#xugrid.Ugrid2d.exterior_faces" title="xugrid.Ugrid2d.exterior_faces"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.exterior_faces</span></code></a></p></td>
+<td><p>Get all exterior faces, i.e. faces with an unshared edge.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.copy.html#xugrid.Ugrid2d.copy" title="xugrid.Ugrid2d.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.copy</span></code></a>()</p></td>
+<td><p>Create a deepcopy.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.rename.html#xugrid.Ugrid2d.rename" title="xugrid.Ugrid2d.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.rename</span></code></a>(name[, return_name_dict])</p></td>
+<td><p>Create a new grid with all variables named according to the default naming conventions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.triangulate.html#xugrid.Ugrid2d.triangulate" title="xugrid.Ugrid2d.triangulate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.triangulate</span></code></a>()</p></td>
+<td><p>Triangulate this UGRID2D topology, breaks more complex polygons down into triangles.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.triangulation.html#xugrid.Ugrid2d.triangulation" title="xugrid.Ugrid2d.triangulation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.triangulation</span></code></a></p></td>
+<td><p>Triangulation of the UGRID2D topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.voronoi_topology.html#xugrid.Ugrid2d.voronoi_topology" title="xugrid.Ugrid2d.voronoi_topology"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.voronoi_topology</span></code></a></p></td>
+<td><p>Centroidal Voronoi tesselation of this UGRID2D topology.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.centroid_triangulation.html#xugrid.Ugrid2d.centroid_triangulation" title="xugrid.Ugrid2d.centroid_triangulation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.centroid_triangulation</span></code></a></p></td>
+<td><p>Triangulation of centroidal voronoi tesselation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.tesselate_centroidal_voronoi.html#xugrid.Ugrid2d.tesselate_centroidal_voronoi" title="xugrid.Ugrid2d.tesselate_centroidal_voronoi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.tesselate_centroidal_voronoi</span></code></a>([...])</p></td>
+<td><p>Create a centroidal Voronoi tesselation of this UGRID2D topology.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.tesselate_circumcenter_voronoi.html#xugrid.Ugrid2d.tesselate_circumcenter_voronoi" title="xugrid.Ugrid2d.tesselate_circumcenter_voronoi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.tesselate_circumcenter_voronoi</span></code></a>([...])</p></td>
+<td><p>Create a circumcenter Voronoi tesselation of this UGRID2D topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.reverse_cuthill_mckee.html#xugrid.Ugrid2d.reverse_cuthill_mckee" title="xugrid.Ugrid2d.reverse_cuthill_mckee"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.reverse_cuthill_mckee</span></code></a>([dimension])</p></td>
+<td><p>Reduces bandwith of the connectivity matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.compute_barycentric_weights.html#xugrid.Ugrid2d.compute_barycentric_weights" title="xugrid.Ugrid2d.compute_barycentric_weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.compute_barycentric_weights</span></code></a>(points)</p></td>
+<td><p>Find in which face the points are located, and compute the barycentric weight for every vertex of the face.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.isel.html#xugrid.Ugrid2d.isel" title="xugrid.Ugrid2d.isel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.isel</span></code></a>([indexers, return_index])</p></td>
+<td><p>Select based on node, edge, or face.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.sel.html#xugrid.Ugrid2d.sel" title="xugrid.Ugrid2d.sel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.sel</span></code></a>(obj[, x, y])</p></td>
+<td><p>Find selection in the UGRID x and y coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.sel_points.html#xugrid.Ugrid2d.sel_points" title="xugrid.Ugrid2d.sel_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.sel_points</span></code></a>(obj, x, y[, ...])</p></td>
+<td><p>Select points in the unstructured grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.intersect_line.html#xugrid.Ugrid2d.intersect_line" title="xugrid.Ugrid2d.intersect_line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.intersect_line</span></code></a>(obj, start, end)</p></td>
+<td><p>Intersect a line with this grid, and fetch the values of the intersected faces.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.intersect_linestring.html#xugrid.Ugrid2d.intersect_linestring" title="xugrid.Ugrid2d.intersect_linestring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.intersect_linestring</span></code></a>(obj, linestring)</p></td>
+<td><p>Intersect linestrings with this grid, and fetch the values of the intersected faces.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.celltree.html#xugrid.Ugrid2d.celltree" title="xugrid.Ugrid2d.celltree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.celltree</span></code></a></p></td>
+<td><p>Initializes the celltree if needed, and returns celltree.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.node_kdtree.html#xugrid.Ugrid2d.node_kdtree" title="xugrid.Ugrid2d.node_kdtree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.node_kdtree</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.edge_kdtree.html#xugrid.Ugrid2d.edge_kdtree" title="xugrid.Ugrid2d.edge_kdtree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.edge_kdtree</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.face_kdtree.html#xugrid.Ugrid2d.face_kdtree" title="xugrid.Ugrid2d.face_kdtree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.face_kdtree</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.locate_nearest_node.html#xugrid.Ugrid2d.locate_nearest_node" title="xugrid.Ugrid2d.locate_nearest_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.locate_nearest_node</span></code></a>(points[, ...])</p></td>
+<td><p>Find which grid node is nearest for a collection of points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.locate_nearest_edge.html#xugrid.Ugrid2d.locate_nearest_edge" title="xugrid.Ugrid2d.locate_nearest_edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.locate_nearest_edge</span></code></a>(points[, ...])</p></td>
+<td><p>Find which grid node is nearest for a collection of points.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.locate_nearest_face.html#xugrid.Ugrid2d.locate_nearest_face" title="xugrid.Ugrid2d.locate_nearest_face"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.locate_nearest_face</span></code></a>(points[, ...])</p></td>
+<td><p>Find which grid face is nearest for a collection of points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.locate_points.html#xugrid.Ugrid2d.locate_points" title="xugrid.Ugrid2d.locate_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.locate_points</span></code></a>(points[, tolerance])</p></td>
+<td><p>Find on which edge points are located.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.intersect_edges.html#xugrid.Ugrid2d.intersect_edges" title="xugrid.Ugrid2d.intersect_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.intersect_edges</span></code></a>(edges)</p></td>
+<td><p>Find in which grid edges are edges are located and compute the intersection with the edges.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.locate_bounding_box.html#xugrid.Ugrid2d.locate_bounding_box" title="xugrid.Ugrid2d.locate_bounding_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.locate_bounding_box</span></code></a>(xmin, ymin, ...)</p></td>
+<td><p>Find which faces are located in the bounding box.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.rasterize.html#xugrid.Ugrid2d.rasterize" title="xugrid.Ugrid2d.rasterize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.rasterize</span></code></a>(resolution[, bounds])</p></td>
+<td><p>Rasterize unstructured grid by sampling.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.rasterize_like.html#xugrid.Ugrid2d.rasterize_like" title="xugrid.Ugrid2d.rasterize_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.rasterize_like</span></code></a>(x, y)</p></td>
+<td><p>Rasterize unstructured grid by sampling on the x and y coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.to_periodic.html#xugrid.Ugrid2d.to_periodic" title="xugrid.Ugrid2d.to_periodic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.to_periodic</span></code></a>([obj])</p></td>
+<td><p>Convert this grid to a periodic grid, where the rightmost nodes are equal to the leftmost nodes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.to_nonperiodic.html#xugrid.Ugrid2d.to_nonperiodic" title="xugrid.Ugrid2d.to_nonperiodic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.to_nonperiodic</span></code></a>(xmax[, obj])</p></td>
+<td><p>Convert this grid from a periodic grid (where the rightmost boundary shares its nodes with the leftmost boundary) to an aperiodic grid, where the leftmost nodes are separate from the rightmost nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.topology_subset.html#xugrid.Ugrid2d.topology_subset" title="xugrid.Ugrid2d.topology_subset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.topology_subset</span></code></a>(face_index[, ...])</p></td>
+<td><p>Create a new UGRID1D topology for a subset of this topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.label_partitions.html#xugrid.Ugrid2d.label_partitions" title="xugrid.Ugrid2d.label_partitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.label_partitions</span></code></a>(n_part[, weights])</p></td>
+<td><p>Generate partition labels for this grid topology using METIS: <a class="github reference external" href="https://github.com/KarypisLab/METIS">KarypisLab/METIS</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.partition.html#xugrid.Ugrid2d.partition" title="xugrid.Ugrid2d.partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.partition</span></code></a>(n_part[, weights])</p></td>
+<td><p>Partition this grid topology using METIS: <a class="github reference external" href="https://github.com/KarypisLab/METIS">KarypisLab/METIS</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.merge_partitions.html#xugrid.Ugrid2d.merge_partitions" title="xugrid.Ugrid2d.merge_partitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.merge_partitions</span></code></a>(grids)</p></td>
+<td><p>Merge grid partitions into a single whole.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.reindex_like.html#xugrid.Ugrid2d.reindex_like" title="xugrid.Ugrid2d.reindex_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.reindex_like</span></code></a>(other, obj[, tolerance])</p></td>
+<td><p>Conform a DataArray or Dataset to match the topology of another Ugrid2D topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.from_meshkernel.html#xugrid.Ugrid2d.from_meshkernel" title="xugrid.Ugrid2d.from_meshkernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.from_meshkernel</span></code></a>(mesh[, name, ...])</p></td>
+<td><p>Create a 2D UGRID topology from a MeshKernel Mesh2d object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.mesh.html#xugrid.Ugrid2d.mesh" title="xugrid.Ugrid2d.mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.mesh</span></code></a></p></td>
+<td><p>Create if needed, and return meshkernel Mesh2d object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.meshkernel.html#xugrid.Ugrid2d.meshkernel" title="xugrid.Ugrid2d.meshkernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.meshkernel</span></code></a></p></td>
+<td><p>Create if needed, and return meshkernel MeshKernel instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.set_crs.html#xugrid.Ugrid2d.set_crs" title="xugrid.Ugrid2d.set_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.set_crs</span></code></a>([crs, epsg, allow_override])</p></td>
+<td><p>Set the Coordinate Reference System (CRS) of a UGRID topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.to_crs.html#xugrid.Ugrid2d.to_crs" title="xugrid.Ugrid2d.to_crs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.to_crs</span></code></a>([crs, epsg])</p></td>
+<td><p>Transform geometries to a new coordinate reference system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.from_dataset.html#xugrid.Ugrid2d.from_dataset" title="xugrid.Ugrid2d.from_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.from_dataset</span></code></a>(dataset[, topology])</p></td>
+<td><p>Extract the 2D UGRID topology information from an xarray Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.to_dataset.html#xugrid.Ugrid2d.to_dataset" title="xugrid.Ugrid2d.to_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.to_dataset</span></code></a>([other, optional_attributes])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.from_geodataframe.html#xugrid.Ugrid2d.from_geodataframe" title="xugrid.Ugrid2d.from_geodataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.from_geodataframe</span></code></a>(geodataframe)</p></td>
+<td><p>Convert a geodataframe of polygons to UGRID2D topology.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.from_structured.html#xugrid.Ugrid2d.from_structured" title="xugrid.Ugrid2d.from_structured"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.from_structured</span></code></a>(data[, x, y, name, ...])</p></td>
+<td><p>Create a Ugrid2d topology from a structured topology axis-aligned rectilinear, rotated or (approximated) curvilinear topologies.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.from_structured_bounds.html#xugrid.Ugrid2d.from_structured_bounds" title="xugrid.Ugrid2d.from_structured_bounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.from_structured_bounds</span></code></a>(x_bounds, ...)</p></td>
+<td><p>Create a Ugrid2d topology from a structured topology based on 2D or 3D bounds.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.from_structured_intervals1d.html#xugrid.Ugrid2d.from_structured_intervals1d" title="xugrid.Ugrid2d.from_structured_intervals1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.from_structured_intervals1d</span></code></a>(...[, name])</p></td>
+<td><p>Create a Ugrid2d topology from a structured topology based on 1D intervals.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.from_structured_intervals2d.html#xugrid.Ugrid2d.from_structured_intervals2d" title="xugrid.Ugrid2d.from_structured_intervals2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.from_structured_intervals2d</span></code></a>(...[, name])</p></td>
+<td><p>Create a Ugrid2d topology from a structured topology based on 2D intervals.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.from_shapely.html#xugrid.Ugrid2d.from_shapely" title="xugrid.Ugrid2d.from_shapely"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.from_shapely</span></code></a>(geometry[, crs])</p></td>
+<td><p>Convert an array of shapely polygons to UGRID2D topology.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.to_shapely.html#xugrid.Ugrid2d.to_shapely" title="xugrid.Ugrid2d.to_shapely"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.to_shapely</span></code></a>(dim)</p></td>
+<td><p>Convert UGRID topology to shapely objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.earcut_triangulate_polygons.html#xugrid.Ugrid2d.earcut_triangulate_polygons" title="xugrid.Ugrid2d.earcut_triangulate_polygons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.earcut_triangulate_polygons</span></code></a>(polygons)</p></td>
+<td><p>Break down polygons using mapbox_earcut, and create a mesh from the resulting triangles.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.create_data_array.html#xugrid.Ugrid2d.create_data_array" title="xugrid.Ugrid2d.create_data_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.create_data_array</span></code></a>(data, facet)</p></td>
+<td><p>Create a UgridDataArray from this grid and a 1D array of values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.Ugrid2d.plot.html#xugrid.Ugrid2d.plot" title="xugrid.Ugrid2d.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ugrid2d.plot</span></code></a>(**kwargs)</p></td>
+<td><p>Plot the edges of the mesh.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ugrid-roles-accessor">
+<h2>UGRID Roles Accessor<a class="headerlink" href="#ugrid-roles-accessor" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridRolesAccessor.html#xugrid.UgridRolesAccessor" title="xugrid.UgridRolesAccessor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridRolesAccessor</span></code></a>(ds)</p></td>
+<td><p>Xarray Dataset &quot;accessor&quot; to retrieve the names of UGRID variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridRolesAccessor.topology.html#xugrid.UgridRolesAccessor.topology" title="xugrid.UgridRolesAccessor.topology"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridRolesAccessor.topology</span></code></a></p></td>
+<td><p>Get the names of the topology dummy variables, marked by a CF-role of <code class="docutils literal notranslate"><span class="pre">mesh_topology</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridRolesAccessor.connectivity.html#xugrid.UgridRolesAccessor.connectivity" title="xugrid.UgridRolesAccessor.connectivity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridRolesAccessor.connectivity</span></code></a></p></td>
+<td><p>Get the names of the variables containing the UGRID connectivity data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/xugrid.UgridRolesAccessor.coordinates.html#xugrid.UgridRolesAccessor.coordinates" title="xugrid.UgridRolesAccessor.coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridRolesAccessor.coordinates</span></code></a></p></td>
+<td><p>Get the names of the coordinate variables from the topology attributes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/xugrid.UgridRolesAccessor.dimensions.html#xugrid.UgridRolesAccessor.dimensions" title="xugrid.UgridRolesAccessor.dimensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UgridRolesAccessor.dimensions</span></code></a></p></td>
+<td><p>Get the dimension names from the topology attributes and infer them from connectivity arrays or coordinates.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sample_data/disk.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Disk</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="changelog.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Changelog</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-level-functions">Top-level functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugriddataarray">UgridDataArray</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugriddataset">UgridDataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugrid-accessor">UGRID Accessor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapping">Snapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regridding">Regridding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gridding">Gridding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugrid1d-topology">UGRID1D Topology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugrid2d-topology">UGRID2D Topology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugrid-roles-accessor">UGRID Roles Accessor</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Deltares.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1322 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>xugrid.UgridDataset &#8212; Xugrid 0.14.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-deltares.css?v=45942d5c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=3a3a8e7f"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/xugrid.UgridDataset';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="xugrid.UgridDataset.ugrid" href="xugrid.UgridDataset.ugrid.html" />
+    <link rel="prev" title="xugrid.UgridDataArray.from_data" href="xugrid.UgridDataArray.from_data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.14.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/xugrid-logo.svg" class="logo__image only-light" alt=""/>
+    <img src="../_static/xugrid-logo.svg" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Xugrid</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../dev_docs.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Deltares/xugrid" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deltares.nl/en/" title="Deltares" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/deltares-blue.svg" class="icon-link-image" alt="Deltares"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../dev_docs.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Deltares/xugrid" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deltares.nl/en/" title="Deltares" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/deltares-blue.svg" class="icon-link-image" alt="Deltares"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.load_dataarray.html">xugrid.load_dataarray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.open_dataarray.html">xugrid.open_dataarray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.load_dataset.html">xugrid.load_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.open_dataset.html">xugrid.open_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.open_mfdataset.html">xugrid.open_mfdataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.open_zarr.html">xugrid.open_zarr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.full_like.html">xugrid.full_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.ones_like.html">xugrid.ones_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.zeros_like.html">xugrid.zeros_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.concat.html">xugrid.concat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.merge.html">xugrid.merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.merge_partitions.html">xugrid.merge_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.burn_vector_geometry.html">xugrid.burn_vector_geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.earcut_triangulate_polygons.html">xugrid.earcut_triangulate_polygons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.polygonize.html">xugrid.polygonize</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArray.html">xugrid.UgridDataArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArray.ugrid.html">xugrid.UgridDataArray.ugrid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArray.from_structured2d.html">xugrid.UgridDataArray.from_structured2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArray.from_data.html">xugrid.UgridDataArray.from_data</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">xugrid.UgridDataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataset.ugrid.html">xugrid.UgridDataset.ugrid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataset.from_geodataframe.html">xugrid.UgridDataset.from_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataset.from_structured2d.html">xugrid.UgridDataset.from_structured2d</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.html">xugrid.UgridDatasetAccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.assign_node_coords.html">xugrid.UgridDatasetAccessor.assign_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.assign_edge_coords.html">xugrid.UgridDatasetAccessor.assign_edge_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.assign_face_coords.html">xugrid.UgridDatasetAccessor.assign_face_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.set_node_coords.html">xugrid.UgridDatasetAccessor.set_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.grid.html">xugrid.UgridDatasetAccessor.grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.name.html">xugrid.UgridDatasetAccessor.name</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.names.html">xugrid.UgridDatasetAccessor.names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.topology.html">xugrid.UgridDatasetAccessor.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.bounds.html">xugrid.UgridDatasetAccessor.bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.total_bounds.html">xugrid.UgridDatasetAccessor.total_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.crs.html">xugrid.UgridDatasetAccessor.crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.rename.html">xugrid.UgridDatasetAccessor.rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.set_crs.html">xugrid.UgridDatasetAccessor.set_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.to_crs.html">xugrid.UgridDatasetAccessor.to_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.sel.html">xugrid.UgridDatasetAccessor.sel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.sel_points.html">xugrid.UgridDatasetAccessor.sel_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.rasterize.html">xugrid.UgridDatasetAccessor.rasterize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.rasterize_like.html">xugrid.UgridDatasetAccessor.rasterize_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.to_periodic.html">xugrid.UgridDatasetAccessor.to_periodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.to_nonperiodic.html">xugrid.UgridDatasetAccessor.to_nonperiodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.intersect_line.html">xugrid.UgridDatasetAccessor.intersect_line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.intersect_linestring.html">xugrid.UgridDatasetAccessor.intersect_linestring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.partition.html">xugrid.UgridDatasetAccessor.partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.partition_by_label.html">xugrid.UgridDatasetAccessor.partition_by_label</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.reindex_like.html">xugrid.UgridDatasetAccessor.reindex_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.to_geodataframe.html">xugrid.UgridDatasetAccessor.to_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.to_dataset.html">xugrid.UgridDatasetAccessor.to_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.to_netcdf.html">xugrid.UgridDatasetAccessor.to_netcdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDatasetAccessor.to_zarr.html">xugrid.UgridDatasetAccessor.to_zarr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.html">xugrid.UgridDataArrayAccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.assign_node_coords.html">xugrid.UgridDataArrayAccessor.assign_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.assign_edge_coords.html">xugrid.UgridDataArrayAccessor.assign_edge_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.assign_face_coords.html">xugrid.UgridDataArrayAccessor.assign_face_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.set_node_coords.html">xugrid.UgridDataArrayAccessor.set_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.grids.html">xugrid.UgridDataArrayAccessor.grids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.name.html">xugrid.UgridDataArrayAccessor.name</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.names.html">xugrid.UgridDataArrayAccessor.names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.topology.html">xugrid.UgridDataArrayAccessor.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.bounds.html">xugrid.UgridDataArrayAccessor.bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.total_bounds.html">xugrid.UgridDataArrayAccessor.total_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.crs.html">xugrid.UgridDataArrayAccessor.crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.rename.html">xugrid.UgridDataArrayAccessor.rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.set_crs.html">xugrid.UgridDataArrayAccessor.set_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_crs.html">xugrid.UgridDataArrayAccessor.to_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.sel.html">xugrid.UgridDataArrayAccessor.sel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.sel_points.html">xugrid.UgridDataArrayAccessor.sel_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.intersect_line.html">xugrid.UgridDataArrayAccessor.intersect_line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.intersect_linestring.html">xugrid.UgridDataArrayAccessor.intersect_linestring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.label_partitions.html">xugrid.UgridDataArrayAccessor.label_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.partition.html">xugrid.UgridDataArrayAccessor.partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.partition_by_label.html">xugrid.UgridDataArrayAccessor.partition_by_label</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.rasterize.html">xugrid.UgridDataArrayAccessor.rasterize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.rasterize_like.html">xugrid.UgridDataArrayAccessor.rasterize_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.reindex_like.html">xugrid.UgridDataArrayAccessor.reindex_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_node.html">xugrid.UgridDataArrayAccessor.to_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_edge.html">xugrid.UgridDataArrayAccessor.to_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_face.html">xugrid.UgridDataArrayAccessor.to_face</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_periodic.html">xugrid.UgridDataArrayAccessor.to_periodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_nonperiodic.html">xugrid.UgridDataArrayAccessor.to_nonperiodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_geodataframe.html">xugrid.UgridDataArrayAccessor.to_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.binary_dilation.html">xugrid.UgridDataArrayAccessor.binary_dilation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.binary_erosion.html">xugrid.UgridDataArrayAccessor.binary_erosion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.connected_components.html">xugrid.UgridDataArrayAccessor.connected_components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee.html">xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.interpolate_na.html">xugrid.UgridDataArrayAccessor.interpolate_na</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.laplace_interpolate.html">xugrid.UgridDataArrayAccessor.laplace_interpolate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_dataset.html">xugrid.UgridDataArrayAccessor.to_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_netcdf.html">xugrid.UgridDataArrayAccessor.to_netcdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridDataArrayAccessor.to_zarr.html">xugrid.UgridDataArrayAccessor.to_zarr</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.snap_nodes.html">xugrid.snap_nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.snap_to_grid.html">xugrid.snap_to_grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.create_snap_to_grid_dataframe.html">xugrid.create_snap_to_grid_dataframe</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.BarycentricInterpolator.html">xugrid.BarycentricInterpolator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.CentroidLocatorRegridder.html">xugrid.CentroidLocatorRegridder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.OverlapRegridder.html">xugrid.OverlapRegridder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.RelativeOverlapRegridder.html">xugrid.RelativeOverlapRegridder</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.NetworkGridder.html">xugrid.NetworkGridder</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.plot.contour.html">xugrid.plot.contour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.plot.contourf.html">xugrid.plot.contourf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.plot.imshow.html">xugrid.plot.imshow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.plot.line.html">xugrid.plot.line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.plot.pcolormesh.html">xugrid.plot.pcolormesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.plot.scatter.html">xugrid.plot.scatter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.plot.surface.html">xugrid.plot.surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.plot.tripcolor.html">xugrid.plot.tripcolor</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.html">xugrid.Ugrid1d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.topology_dimension.html">xugrid.Ugrid1d.topology_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.dims.html">xugrid.Ugrid1d.dims</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.sizes.html">xugrid.Ugrid1d.sizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.attrs.html">xugrid.Ugrid1d.attrs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.coords.html">xugrid.Ugrid1d.coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.fill_value.html">xugrid.Ugrid1d.fill_value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.start_index.html">xugrid.Ugrid1d.start_index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.n_node.html">xugrid.Ugrid1d.n_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.node_dimension.html">xugrid.Ugrid1d.node_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.node_coordinates.html">xugrid.Ugrid1d.node_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.set_node_coords.html">xugrid.Ugrid1d.set_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.assign_node_coords.html">xugrid.Ugrid1d.assign_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.assign_edge_coords.html">xugrid.Ugrid1d.assign_edge_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.get_coordinates.html">xugrid.Ugrid1d.get_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.n_edge.html">xugrid.Ugrid1d.n_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.edge_dimension.html">xugrid.Ugrid1d.edge_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.edge_coordinates.html">xugrid.Ugrid1d.edge_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.edge_x.html">xugrid.Ugrid1d.edge_x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.edge_y.html">xugrid.Ugrid1d.edge_y</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.bounds.html">xugrid.Ugrid1d.bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.edge_bounds.html">xugrid.Ugrid1d.edge_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.edge_length.html">xugrid.Ugrid1d.edge_length</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.node_edge_connectivity.html">xugrid.Ugrid1d.node_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.node_node_connectivity.html">xugrid.Ugrid1d.node_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.edge_edge_connectivity.html">xugrid.Ugrid1d.edge_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.directed_node_node_connectivity.html">xugrid.Ugrid1d.directed_node_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.directed_edge_edge_connectivity.html">xugrid.Ugrid1d.directed_edge_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.get_connectivity_matrix.html">xugrid.Ugrid1d.get_connectivity_matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.is_cyclic.html">xugrid.Ugrid1d.is_cyclic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.format_connectivity_as_dense.html">xugrid.Ugrid1d.format_connectivity_as_dense</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.format_connectivity_as_sparse.html">xugrid.Ugrid1d.format_connectivity_as_sparse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.refine_by_vertices.html">xugrid.Ugrid1d.refine_by_vertices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.copy.html">xugrid.Ugrid1d.copy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.rename.html">xugrid.Ugrid1d.rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.isel.html">xugrid.Ugrid1d.isel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.sel.html">xugrid.Ugrid1d.sel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.sel_points.html">xugrid.Ugrid1d.sel_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.intersect_line.html">xugrid.Ugrid1d.intersect_line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.intersect_linestring.html">xugrid.Ugrid1d.intersect_linestring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.celltree.html">xugrid.Ugrid1d.celltree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.node_kdtree.html">xugrid.Ugrid1d.node_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.edge_kdtree.html">xugrid.Ugrid1d.edge_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.locate_nearest_node.html">xugrid.Ugrid1d.locate_nearest_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.locate_nearest_edge.html">xugrid.Ugrid1d.locate_nearest_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.locate_points.html">xugrid.Ugrid1d.locate_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.intersect_edges.html">xugrid.Ugrid1d.intersect_edges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.topology_subset.html">xugrid.Ugrid1d.topology_subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.merge_partitions.html">xugrid.Ugrid1d.merge_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.topological_sort_by_dfs.html">xugrid.Ugrid1d.topological_sort_by_dfs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.contract_vertices.html">xugrid.Ugrid1d.contract_vertices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.remove_self_loops.html">xugrid.Ugrid1d.remove_self_loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.reindex_like.html">xugrid.Ugrid1d.reindex_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.from_meshkernel.html">xugrid.Ugrid1d.from_meshkernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.mesh.html">xugrid.Ugrid1d.mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.meshkernel.html">xugrid.Ugrid1d.meshkernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.set_crs.html">xugrid.Ugrid1d.set_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.to_crs.html">xugrid.Ugrid1d.to_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.from_dataset.html">xugrid.Ugrid1d.from_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.to_dataset.html">xugrid.Ugrid1d.to_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.from_geodataframe.html">xugrid.Ugrid1d.from_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.from_shapely.html">xugrid.Ugrid1d.from_shapely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.to_shapely.html">xugrid.Ugrid1d.to_shapely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.create_data_array.html">xugrid.Ugrid1d.create_data_array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid1d.plot.html">xugrid.Ugrid1d.plot</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.html">xugrid.Ugrid2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.topology_dimension.html">xugrid.Ugrid2d.topology_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.dims.html">xugrid.Ugrid2d.dims</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.sizes.html">xugrid.Ugrid2d.sizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.attrs.html">xugrid.Ugrid2d.attrs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.coords.html">xugrid.Ugrid2d.coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.fill_value.html">xugrid.Ugrid2d.fill_value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.start_index.html">xugrid.Ugrid2d.start_index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.n_node.html">xugrid.Ugrid2d.n_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.node_dimension.html">xugrid.Ugrid2d.node_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.node_coordinates.html">xugrid.Ugrid2d.node_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.set_node_coords.html">xugrid.Ugrid2d.set_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.assign_node_coords.html">xugrid.Ugrid2d.assign_node_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.assign_edge_coords.html">xugrid.Ugrid2d.assign_edge_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.assign_face_coords.html">xugrid.Ugrid2d.assign_face_coords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.get_coordinates.html">xugrid.Ugrid2d.get_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.n_edge.html">xugrid.Ugrid2d.n_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.edge_dimension.html">xugrid.Ugrid2d.edge_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.edge_coordinates.html">xugrid.Ugrid2d.edge_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.edge_x.html">xugrid.Ugrid2d.edge_x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.edge_y.html">xugrid.Ugrid2d.edge_y</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.edge_length.html">xugrid.Ugrid2d.edge_length</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.n_face.html">xugrid.Ugrid2d.n_face</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.face_dimension.html">xugrid.Ugrid2d.face_dimension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.face_coordinates.html">xugrid.Ugrid2d.face_coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.centroids.html">xugrid.Ugrid2d.centroids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.circumcenters.html">xugrid.Ugrid2d.circumcenters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.area.html">xugrid.Ugrid2d.area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.perimeter.html">xugrid.Ugrid2d.perimeter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.face_x.html">xugrid.Ugrid2d.face_x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.face_y.html">xugrid.Ugrid2d.face_y</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.bounds.html">xugrid.Ugrid2d.bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.edge_bounds.html">xugrid.Ugrid2d.edge_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.face_bounds.html">xugrid.Ugrid2d.face_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.bounding_polygon.html">xugrid.Ugrid2d.bounding_polygon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.node_node_connectivity.html">xugrid.Ugrid2d.node_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.node_edge_connectivity.html">xugrid.Ugrid2d.node_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.node_face_connectivity.html">xugrid.Ugrid2d.node_face_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.edge_node_connectivity.html">xugrid.Ugrid2d.edge_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.edge_edge_connectivity.html">xugrid.Ugrid2d.edge_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.face_edge_connectivity.html">xugrid.Ugrid2d.face_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.face_face_connectivity.html">xugrid.Ugrid2d.face_face_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.directed_node_node_connectivity.html">xugrid.Ugrid2d.directed_node_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.directed_edge_edge_connectivity.html">xugrid.Ugrid2d.directed_edge_edge_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.get_connectivity_matrix.html">xugrid.Ugrid2d.get_connectivity_matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.format_connectivity_as_dense.html">xugrid.Ugrid2d.format_connectivity_as_dense</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.format_connectivity_as_sparse.html">xugrid.Ugrid2d.format_connectivity_as_sparse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.validate_edge_node_connectivity.html">xugrid.Ugrid2d.validate_edge_node_connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.exterior_edges.html">xugrid.Ugrid2d.exterior_edges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.exterior_faces.html">xugrid.Ugrid2d.exterior_faces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.copy.html">xugrid.Ugrid2d.copy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.rename.html">xugrid.Ugrid2d.rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.triangulate.html">xugrid.Ugrid2d.triangulate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.triangulation.html">xugrid.Ugrid2d.triangulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.voronoi_topology.html">xugrid.Ugrid2d.voronoi_topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.centroid_triangulation.html">xugrid.Ugrid2d.centroid_triangulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.tesselate_centroidal_voronoi.html">xugrid.Ugrid2d.tesselate_centroidal_voronoi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.tesselate_circumcenter_voronoi.html">xugrid.Ugrid2d.tesselate_circumcenter_voronoi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.reverse_cuthill_mckee.html">xugrid.Ugrid2d.reverse_cuthill_mckee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.compute_barycentric_weights.html">xugrid.Ugrid2d.compute_barycentric_weights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.isel.html">xugrid.Ugrid2d.isel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.sel.html">xugrid.Ugrid2d.sel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.sel_points.html">xugrid.Ugrid2d.sel_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.intersect_line.html">xugrid.Ugrid2d.intersect_line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.intersect_linestring.html">xugrid.Ugrid2d.intersect_linestring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.celltree.html">xugrid.Ugrid2d.celltree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.node_kdtree.html">xugrid.Ugrid2d.node_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.edge_kdtree.html">xugrid.Ugrid2d.edge_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.face_kdtree.html">xugrid.Ugrid2d.face_kdtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.locate_nearest_node.html">xugrid.Ugrid2d.locate_nearest_node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.locate_nearest_edge.html">xugrid.Ugrid2d.locate_nearest_edge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.locate_nearest_face.html">xugrid.Ugrid2d.locate_nearest_face</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.locate_points.html">xugrid.Ugrid2d.locate_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.intersect_edges.html">xugrid.Ugrid2d.intersect_edges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.locate_bounding_box.html">xugrid.Ugrid2d.locate_bounding_box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.rasterize.html">xugrid.Ugrid2d.rasterize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.rasterize_like.html">xugrid.Ugrid2d.rasterize_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.to_periodic.html">xugrid.Ugrid2d.to_periodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.to_nonperiodic.html">xugrid.Ugrid2d.to_nonperiodic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.topology_subset.html">xugrid.Ugrid2d.topology_subset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.label_partitions.html">xugrid.Ugrid2d.label_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.partition.html">xugrid.Ugrid2d.partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.merge_partitions.html">xugrid.Ugrid2d.merge_partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.reindex_like.html">xugrid.Ugrid2d.reindex_like</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.from_meshkernel.html">xugrid.Ugrid2d.from_meshkernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.mesh.html">xugrid.Ugrid2d.mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.meshkernel.html">xugrid.Ugrid2d.meshkernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.set_crs.html">xugrid.Ugrid2d.set_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.to_crs.html">xugrid.Ugrid2d.to_crs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.from_dataset.html">xugrid.Ugrid2d.from_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.to_dataset.html">xugrid.Ugrid2d.to_dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.from_geodataframe.html">xugrid.Ugrid2d.from_geodataframe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.from_structured.html">xugrid.Ugrid2d.from_structured</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.from_structured_bounds.html">xugrid.Ugrid2d.from_structured_bounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.from_structured_intervals1d.html">xugrid.Ugrid2d.from_structured_intervals1d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.from_structured_intervals2d.html">xugrid.Ugrid2d.from_structured_intervals2d</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.from_shapely.html">xugrid.Ugrid2d.from_shapely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.to_shapely.html">xugrid.Ugrid2d.to_shapely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.earcut_triangulate_polygons.html">xugrid.Ugrid2d.earcut_triangulate_polygons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.create_data_array.html">xugrid.Ugrid2d.create_data_array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.Ugrid2d.plot.html">xugrid.Ugrid2d.plot</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridRolesAccessor.html">xugrid.UgridRolesAccessor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridRolesAccessor.topology.html">xugrid.UgridRolesAccessor.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridRolesAccessor.connectivity.html">xugrid.UgridRolesAccessor.connectivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridRolesAccessor.coordinates.html">xugrid.UgridRolesAccessor.coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xugrid.UgridRolesAccessor.dimensions.html">xugrid.UgridRolesAccessor.dimensions</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">xugrid.UgridDataset</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="xugrid-ugriddataset">
+<h1>xugrid.UgridDataset<a class="headerlink" href="#xugrid-ugriddataset" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="xugrid.UgridDataset">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xugrid.</span></span><span class="sig-name descname"><span class="pre">UgridDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractUgrid</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractUgrid</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/xugrid/core/wrap.html#UgridDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xugrid.UgridDataset" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="xugrid.UgridDataset.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dataset</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractUgrid</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractUgrid</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/xugrid/core/wrap.html#UgridDataset.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xugrid.UgridDataset.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xugrid.UgridDataset.__init__" title="xugrid.UgridDataset.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([obj, grids])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code>([dim, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">all</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">any</span></code>([dim, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">any</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(func[, keep_attrs, args])</p></td>
+<td><p>Backward compatible implementation of <code class="docutils literal notranslate"><span class="pre">map</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmax</span></code>([dim])</p></td>
+<td><p>Indices of the maxima of the member variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmin</span></code>([dim])</p></td>
+<td><p>Indices of the minima of the member variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argsort</span></code>([axis, kind, order])</p></td>
+<td><p>Returns the indices that would sort this array.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">as_numpy</span></code>()</p></td>
+<td><p>Coerces wrapped data and coordinates into numpy arrays, returning a Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign</span></code>([variables])</p></td>
+<td><p>Assign new data variables to a Dataset, returning a new object with all the original variables in addition to the new ones.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign_attrs</span></code>(*args, **kwargs)</p></td>
+<td><p>Assign new attrs to this object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign_coords</span></code>([coords])</p></td>
+<td><p>Assign new coordinates to this object.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">astype</span></code>(dtype, *[, order, casting, subok, ...])</p></td>
+<td><p>Copy of the xarray object, with data cast to a specified type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfill</span></code>(dim[, limit])</p></td>
+<td><p>Fill NaN values by propagating values backward</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">broadcast_equals</span></code>(other)</p></td>
+<td><p>Two Datasets are broadcast equal if they are equal after broadcasting all variables against each other.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">broadcast_like</span></code>(other[, exclude])</p></td>
+<td><p>Broadcast this DataArray against another Dataset or DataArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">chunk</span></code>([chunks, name_prefix, token, lock, ...])</p></td>
+<td><p>Coerce all arrays in this dataset into dask arrays with the given chunks.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clip</span></code>([min, max, keep_attrs])</p></td>
+<td><p>Return an array whose values are limited to <code class="docutils literal notranslate"><span class="pre">[min,</span> <span class="pre">max]</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</p></td>
+<td><p>Release any resources linked to this object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">coarsen</span></code>([dim, boundary, side, coord_func])</p></td>
+<td><p>Coarsen object for Datasets.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine_first</span></code>(other)</p></td>
+<td><p>Combine two Datasets, default to data_vars of self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute</span></code>(**kwargs)</p></td>
+<td><p>Manually trigger loading and/or computation of this dataset's data from disk or a remote source into memory and return a new dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">conj</span></code>()</p></td>
+<td><p>Complex-conjugate all elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">conjugate</span></code>()</p></td>
+<td><p>Return the complex conjugate, element-wise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_calendar</span></code>(calendar[, dim, align_on, ...])</p></td>
+<td><p>Convert the Dataset to another calendar.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>([deep, data])</p></td>
+<td><p>Returns a copy of this dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code>([dim, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">count</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cumprod</span></code>([dim, skipna, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">cumprod</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cumsum</span></code>([dim, skipna, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">cumsum</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cumulative</span></code>(dim[, min_periods])</p></td>
+<td><p>Accumulating object for Datasets</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cumulative_integrate</span></code>(coord[, datetime_unit])</p></td>
+<td><p>Integrate along the given coordinate using the trapezoidal rule.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">curvefit</span></code>(coords, func[, reduce_dims, ...])</p></td>
+<td><p>Curve fitting optimization for arbitrary functions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">diff</span></code>(dim[, n, label])</p></td>
+<td><p>Calculate the n-th order discrete difference along given axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">differentiate</span></code>(coord[, edge_order, datetime_unit])</p></td>
+<td><p>Differentiate with the second order accurate central differences.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop</span></code>([labels, dim, errors])</p></td>
+<td><p>Backward compatible method based on <cite>drop_vars</cite> and <cite>drop_sel</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_attrs</span></code>(*[, deep])</p></td>
+<td><p>Removes all attributes from the Dataset and its variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_dims</span></code>(drop_dims, *[, errors])</p></td>
+<td><p>Drop dimensions and associated variables from this dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_duplicates</span></code>(dim, *[, keep])</p></td>
+<td><p>Returns a new Dataset with duplicate dimension values removed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_encoding</span></code>()</p></td>
+<td><p>Return a new Dataset without encoding on the dataset or any of its variables/coords.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_indexes</span></code>(coord_names, *[, errors])</p></td>
+<td><p>Drop the indexes assigned to the given coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_isel</span></code>([indexers])</p></td>
+<td><p>Drop index positions from this Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_sel</span></code>([labels, errors])</p></td>
+<td><p>Drop index labels from this dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_vars</span></code>(names, *[, errors])</p></td>
+<td><p>Drop variables from this dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropna</span></code>(dim, *[, how, thresh, subset])</p></td>
+<td><p>Returns a new dataset with dropped labels for missing values along the provided dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dump_to_store</span></code>(store, **kwargs)</p></td>
+<td><p>Store dataset contents to a backends.*DataStore object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">equals</span></code>(other)</p></td>
+<td><p>Two Datasets are equal if they have matching variables and coordinates, all of which are equal.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code>(statement, *[, parser])</p></td>
+<td><p>Calculate an expression supplied as a string in the context of the dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand_dims</span></code>([dim, axis, ...])</p></td>
+<td><p>Return a new object with an additional axis (or axes) inserted at the corresponding position in the array shape.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ffill</span></code>(dim[, limit])</p></td>
+<td><p>Fill NaN values by propagating values forward</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillna</span></code>(value)</p></td>
+<td><p>Fill missing values in this object.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_by_attrs</span></code>(**kwargs)</p></td>
+<td><p>Returns a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> with variables that match specific conditions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dataframe</span></code>([sparse])</p></td>
+<td><p>Convert a pandas.DataFrame into an xarray.Dataset</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code>()</p></td>
+<td><p>Convert a dictionary into an xarray.Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="xugrid.UgridDataset.from_geodataframe.html#xugrid.UgridDataset.from_geodataframe" title="xugrid.UgridDataset.from_geodataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_geodataframe</span></code></a>(geodataframe)</p></td>
+<td><p>Convert a geodataframe into the appropriate Ugrid topology and dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_structured</span></code>(dataset[, topology])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="xugrid.UgridDataset.from_structured2d.html#xugrid.UgridDataset.from_structured2d" title="xugrid.UgridDataset.from_structured2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_structured2d</span></code></a>(dataset[, topology])</p></td>
+<td><p>Create a UgridDataset from a (structured) xarray Dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code>(k[,d])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_index</span></code>(key)</p></td>
+<td><p>Get an index for a dimension, with fall-back to a default RangeIndex</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code>([group, squeeze, ...])</p></td>
+<td><p>Returns a DatasetGroupBy object for performing grouped operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby_bins</span></code>(group, bins[, right, labels, ...])</p></td>
+<td><p>Returns a DatasetGroupBy object for performing grouped operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">head</span></code>([indexers])</p></td>
+<td><p>Returns a new dataset with the first <cite>n</cite> values of each array for the specified dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">identical</span></code>(other)</p></td>
+<td><p>Like equals, but also checks all dataset attributes and the attributes on all variables and coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">idxmax</span></code>([dim, skipna, fill_value, keep_attrs])</p></td>
+<td><p>Return the coordinate label of the maximum value along a dimension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">idxmin</span></code>([dim, skipna, fill_value, keep_attrs])</p></td>
+<td><p>Return the coordinate label of the minimum value along a dimension.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">info</span></code>([buf])</p></td>
+<td><p>Concise summary of a Dataset variables and attributes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">integrate</span></code>(coord[, datetime_unit])</p></td>
+<td><p>Integrate along the given coordinate using the trapezoidal rule.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp</span></code>([coords, method, assume_sorted, ...])</p></td>
+<td><p>Interpolate a Dataset onto new coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp_calendar</span></code>(target[, dim])</p></td>
+<td><p>Interpolates the Dataset to another calendar based on decimal year measure.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp_like</span></code>(other[, method, assume_sorted, ...])</p></td>
+<td><p>Interpolate this object onto the coordinates of another object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate_na</span></code>([dim, method, limit, ...])</p></td>
+<td><p>Fill in NaNs by interpolating according to different methods.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isel</span></code>([indexers, drop, missing_dims])</p></td>
+<td><p>Returns a new dataset with each array indexed along the specified dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isin</span></code>(test_elements)</p></td>
+<td><p>Tests each value in the array for whether it is in test elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnull</span></code>([keep_attrs])</p></td>
+<td><p>Test each value in the array for whether it is a missing value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code>(**kwargs)</p></td>
+<td><p>Manually trigger loading and/or computation of this dataset's data from disk or a remote source into memory and return this dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_store</span></code>([decoder])</p></td>
+<td><p>Create a new dataset from the contents of a backends.*DataStore object</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">map</span></code>(func[, keep_attrs, args])</p></td>
+<td><p>Apply a function to each data variable in this dataset</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">map_blocks</span></code>(func[, args, kwargs, template])</p></td>
+<td><p>Apply a function to each block of this Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code>([dim, skipna, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">max</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code>([dim, skipna, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">mean</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code>([dim, skipna, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">median</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code>(other[, overwrite_vars, compat, join, ...])</p></td>
+<td><p>Merge the arrays of two datasets into a single dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code>([dim, skipna, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">min</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">notnull</span></code>([keep_attrs])</p></td>
+<td><p>Test each value in the array for whether it is not a missing value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code>([pad_width, mode, stat_length, ...])</p></td>
+<td><p>Pad this dataset along one or more dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">persist</span></code>(**kwargs)</p></td>
+<td><p>Trigger computation, keeping data as chunked arrays.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pipe</span></code>(func, *args, **kwargs)</p></td>
+<td><p>Apply <code class="docutils literal notranslate"><span class="pre">func(self,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyfit</span></code>(dim, deg[, skipna, rcond, w, full, cov])</p></td>
+<td><p>Least squares polynomial fit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code>([dim, skipna, min_count, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">prod</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code>(q[, dim, method, numeric_only, ...])</p></td>
+<td><p>Compute the qth quantile of the data along the specified dimension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code>([queries, parser, engine, missing_dims])</p></td>
+<td><p>Return a new dataset with each array indexed along the specified dimension(s), where the indexers are given as strings containing Python expressions to be evaluated against the data variables in the dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rank</span></code>(dim, *[, pct, keep_attrs])</p></td>
+<td><p>Ranks the data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reduce</span></code>(func[, dim, keep_attrs, keepdims, ...])</p></td>
+<td><p>Reduce this dataset by applying <cite>func</cite> along some dimension(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code>([indexers, method, tolerance, copy, ...])</p></td>
+<td><p>Conform this object onto a new set of indexes, filling in missing values with <code class="docutils literal notranslate"><span class="pre">fill_value</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex_like</span></code>(other[, method, tolerance, ...])</p></td>
+<td><p>Conform this object onto the indexes of another object, for indexes which the objects share.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code>([name_dict])</p></td>
+<td><p>Returns a new object with renamed variables, coordinates and dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_dims</span></code>([dims_dict])</p></td>
+<td><p>Returns a new object with renamed dimensions only.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_vars</span></code>([name_dict])</p></td>
+<td><p>Returns a new object with renamed variables including coordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reorder_levels</span></code>([dim_order])</p></td>
+<td><p>Rearrange index levels using input order.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample</span></code>([indexer, skipna, closed, label, ...])</p></td>
+<td><p>Returns a Resample object for performing resampling operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_coords</span></code>([names, drop])</p></td>
+<td><p>Given names of coordinates, reset them to become variables</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_encoding</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_index</span></code>(dims_or_levels, *[, drop])</p></td>
+<td><p>Reset the specified index(es) or multi-index level(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">roll</span></code>([shifts, roll_coords])</p></td>
+<td><p>Roll this dataset by an offset along one or more dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code>([dim, min_periods, center])</p></td>
+<td><p>Rolling window object for Datasets.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling_exp</span></code>([window, window_type])</p></td>
+<td><p>Exponentially-weighted moving window.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sel</span></code>([indexers, method, tolerance, drop])</p></td>
+<td><p>Returns a new dataset with each array indexed by tick labels along the specified dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_close</span></code>(close)</p></td>
+<td><p>Register the function that releases any resources linked to this object.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_coords</span></code>(names)</p></td>
+<td><p>Given names of one or more variables, set them as coordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code>([indexes, append])</p></td>
+<td><p>Set Dataset (multi-)indexes using one or more existing coordinates or variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_xindex</span></code>(coord_names[, index_cls])</p></td>
+<td><p>Set a new, Xarray-compatible index from one or more existing coordinate(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code>([shifts, fill_value])</p></td>
+<td><p>Shift this dataset by an offset along one or more dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sortby</span></code>(variables[, ascending])</p></td>
+<td><p>Sort object by labels or values (along an axis).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">squeeze</span></code>([dim, drop, axis])</p></td>
+<td><p>Return a new object with squeezed data.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code>([dim, create_index, index_cls])</p></td>
+<td><p>Stack any number of existing dimensions into a single new dimension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code>([dim, skipna, ddof, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">std</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code>([dim, skipna, min_count, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">sum</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">swap_dims</span></code>([dims_dict])</p></td>
+<td><p>Returns a new object with swapped dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code>([indexers])</p></td>
+<td><p>Returns a new dataset with the last <cite>n</cite> values of each array for the specified dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">thin</span></code>([indexers])</p></td>
+<td><p>Returns a new dataset with each array indexed along every <cite>n</cite>-th value for the specified dimension(s)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_array</span></code>([dim, name])</p></td>
+<td><p>Deprecated version of to_dataarray</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dask_dataframe</span></code>([dim_order, set_index])</p></td>
+<td><p>Convert this dataset into a dask.dataframe.DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataarray</span></code>([dim, name])</p></td>
+<td><p>Convert this dataset into an xarray.DataArray</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe</span></code>([dim_order])</p></td>
+<td><p>Convert this dataset into a pandas.DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code>([data, encoding])</p></td>
+<td><p>Convert this dataset to a dictionary following xarray naming conventions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_netcdf</span></code>([path, mode, format, group, ...])</p></td>
+<td><p>Write dataset contents to a netCDF file.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code>()</p></td>
+<td><p>Convert this dataset into a pandas object without changing the number of dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_stacked_array</span></code>(new_dim, sample_dims[, ...])</p></td>
+<td><p>Combine variables of differing dimensionality into a DataArray without broadcasting.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_zarr</span></code>([store, chunk_store, mode, ...])</p></td>
+<td><p>Write dataset contents to a zarr group.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code>(*dim[, missing_dims])</p></td>
+<td><p>Return a new Dataset object with all array dimensions transposed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unify_chunks</span></code>()</p></td>
+<td><p>Unify chunk size along all chunked dimensions of this Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unstack</span></code>([dim, fill_value, sparse])</p></td>
+<td><p>Unstack existing dimensions corresponding to MultiIndexes into multiple new dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code>(other)</p></td>
+<td><p>Update this dataset's variables with those from another dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code>([dim, skipna, ddof, keep_attrs])</p></td>
+<td><p>Reduce this Dataset's data by applying <code class="docutils literal notranslate"><span class="pre">var</span></code> along some dimension(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">weighted</span></code>(weights)</p></td>
+<td><p>Weighted Dataset operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code>(cond[, other, drop])</p></td>
+<td><p>Filter elements from this object according to a condition.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">attrs</span></code></p></td>
+<td><p>Dictionary of global attributes on this dataset</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">chunks</span></code></p></td>
+<td><p>Mapping from dimension names to block lengths for this dataset's data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">chunksizes</span></code></p></td>
+<td><p>Mapping from dimension names to block lengths for this dataset's data.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">coords</span></code></p></td>
+<td><p>Mapping of <code class="xref py py-class docutils literal notranslate"><span class="pre">DataArray</span></code> objects corresponding to coordinate variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_vars</span></code></p></td>
+<td><p>Dictionary of DataArray objects corresponding to data variables</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dims</span></code></p></td>
+<td><p>Mapping from dimension names to lengths.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtypes</span></code></p></td>
+<td><p>Mapping from data variable names to dtypes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">encoding</span></code></p></td>
+<td><p>Dictionary of global encoding attributes on this dataset</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">grids</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">imag</span></code></p></td>
+<td><p>The imaginary part of each data variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexes</span></code></p></td>
+<td><p>Mapping of pandas.Index objects used for label based indexing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">loc</span></code></p></td>
+<td><p>Attribute for location based indexing.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">nbytes</span></code></p></td>
+<td><p>Total bytes consumed by the data arrays of all variables in this dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">obj</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></p></td>
+<td><p>Enables use of xarray.plot functions as attributes on a Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">real</span></code></p></td>
+<td><p>The real part of each data variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sizes</span></code></p></td>
+<td><p>Mapping from dimension names to lengths.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="xugrid.UgridDataset.ugrid.html#xugrid.UgridDataset.ugrid" title="xugrid.UgridDataset.ugrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugrid</span></code></a></p></td>
+<td><p>UGRID Accessor.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ugrid_roles</span></code></p></td>
+<td><p>Xarray Dataset &quot;accessor&quot; to retrieve the names of UGRID variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">variables</span></code></p></td>
+<td><p>Low level interface to Dataset contents as dict of Variable objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">xindexes</span></code></p></td>
+<td><p>Mapping of <code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code> objects used for label based indexing.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="xugrid.UgridDataArray.from_data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">xugrid.UgridDataArray.from_data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="xugrid.UgridDataset.ugrid.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">xugrid.UgridDataset.ugrid</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xugrid.UgridDataset"><code class="docutils literal notranslate"><span class="pre">UgridDataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xugrid.UgridDataset.__init__"><code class="docutils literal notranslate"><span class="pre">UgridDataset.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/xugrid.UgridDataset.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Deltares.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

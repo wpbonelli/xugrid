@@ -1,0 +1,67 @@
+﻿xugrid.UgridDataArrayAccessor
+=============================
+
+.. currentmodule:: xugrid
+
+.. autoclass:: UgridDataArrayAccessor
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~UgridDataArrayAccessor.__init__
+      ~UgridDataArrayAccessor.assign_edge_coords
+      ~UgridDataArrayAccessor.assign_face_coords
+      ~UgridDataArrayAccessor.assign_node_coords
+      ~UgridDataArrayAccessor.binary_dilation
+      ~UgridDataArrayAccessor.binary_erosion
+      ~UgridDataArrayAccessor.clip_box
+      ~UgridDataArrayAccessor.connected_components
+      ~UgridDataArrayAccessor.interpolate_na
+      ~UgridDataArrayAccessor.intersect_line
+      ~UgridDataArrayAccessor.intersect_linestring
+      ~UgridDataArrayAccessor.label_partitions
+      ~UgridDataArrayAccessor.laplace_interpolate
+      ~UgridDataArrayAccessor.partition
+      ~UgridDataArrayAccessor.partition_by_label
+      ~UgridDataArrayAccessor.rasterize
+      ~UgridDataArrayAccessor.rasterize_like
+      ~UgridDataArrayAccessor.reindex_like
+      ~UgridDataArrayAccessor.rename
+      ~UgridDataArrayAccessor.reverse_cuthill_mckee
+      ~UgridDataArrayAccessor.sel
+      ~UgridDataArrayAccessor.sel_points
+      ~UgridDataArrayAccessor.set_crs
+      ~UgridDataArrayAccessor.set_node_coords
+      ~UgridDataArrayAccessor.to_crs
+      ~UgridDataArrayAccessor.to_dataset
+      ~UgridDataArrayAccessor.to_edge
+      ~UgridDataArrayAccessor.to_face
+      ~UgridDataArrayAccessor.to_geodataframe
+      ~UgridDataArrayAccessor.to_netcdf
+      ~UgridDataArrayAccessor.to_node
+      ~UgridDataArrayAccessor.to_nonperiodic
+      ~UgridDataArrayAccessor.to_periodic
+      ~UgridDataArrayAccessor.to_zarr
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~UgridDataArrayAccessor.bounds
+      ~UgridDataArrayAccessor.crs
+      ~UgridDataArrayAccessor.grids
+      ~UgridDataArrayAccessor.name
+      ~UgridDataArrayAccessor.names
+      ~UgridDataArrayAccessor.topology
+      ~UgridDataArrayAccessor.total_bounds
+   
+   

@@ -1,0 +1,1349 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; Xugrid 0.14.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/theme-deltares.css?v=45942d5c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=3a3a8e7f"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.14.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/xugrid-logo.svg" class="logo__image only-light" alt=""/>
+    <img src="_static/xugrid-logo.svg" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Xugrid</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dev_docs.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Deltares/xugrid" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deltares.nl/en/" title="Deltares" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/deltares-blue.svg" class="icon-link-image" alt="Deltares"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="dev_docs.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Deltares/xugrid" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deltares.nl/en/" title="Deltares" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="_static/deltares-blue.svg" class="icon-link-image" alt="Deltares"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.BarycentricInterpolator.html#xugrid.BarycentricInterpolator.__init__">__init__() (xugrid.BarycentricInterpolator method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.CentroidLocatorRegridder.html#xugrid.CentroidLocatorRegridder.__init__">(xugrid.CentroidLocatorRegridder method)</a>
+</li>
+        <li><a href="api/xugrid.NetworkGridder.html#xugrid.NetworkGridder.__init__">(xugrid.NetworkGridder method)</a>
+</li>
+        <li><a href="api/xugrid.OverlapRegridder.html#xugrid.OverlapRegridder.__init__">(xugrid.OverlapRegridder method)</a>
+</li>
+        <li><a href="api/xugrid.RelativeOverlapRegridder.html#xugrid.RelativeOverlapRegridder.__init__">(xugrid.RelativeOverlapRegridder method)</a>
+</li>
+        <li><a href="api/xugrid.Ugrid1d.html#xugrid.Ugrid1d.__init__">(xugrid.Ugrid1d method)</a>
+</li>
+        <li><a href="api/xugrid.Ugrid2d.html#xugrid.Ugrid2d.__init__">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArray.html#xugrid.UgridDataArray.__init__">(xugrid.UgridDataArray method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.html#xugrid.UgridDataArrayAccessor.__init__">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataset.html#xugrid.UgridDataset.__init__">(xugrid.UgridDataset method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.html#xugrid.UgridDatasetAccessor.__init__">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridRolesAccessor.html#xugrid.UgridRolesAccessor.__init__">(xugrid.UgridRolesAccessor method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid2d.area.html#xugrid.Ugrid2d.area">area (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.assign_edge_coords.html#xugrid.Ugrid1d.assign_edge_coords">assign_edge_coords() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.assign_edge_coords.html#xugrid.Ugrid2d.assign_edge_coords">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.assign_edge_coords.html#xugrid.UgridDataArrayAccessor.assign_edge_coords">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.assign_edge_coords.html#xugrid.UgridDatasetAccessor.assign_edge_coords">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.assign_face_coords.html#xugrid.Ugrid2d.assign_face_coords">assign_face_coords() (xugrid.Ugrid2d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.assign_face_coords.html#xugrid.UgridDataArrayAccessor.assign_face_coords">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.assign_face_coords.html#xugrid.UgridDatasetAccessor.assign_face_coords">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.assign_node_coords.html#xugrid.Ugrid1d.assign_node_coords">assign_node_coords() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.assign_node_coords.html#xugrid.Ugrid2d.assign_node_coords">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.assign_node_coords.html#xugrid.UgridDataArrayAccessor.assign_node_coords">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.assign_node_coords.html#xugrid.UgridDatasetAccessor.assign_node_coords">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.attrs.html#xugrid.Ugrid1d.attrs">attrs (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.attrs.html#xugrid.Ugrid2d.attrs">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.BarycentricInterpolator.html#xugrid.BarycentricInterpolator">BarycentricInterpolator (class in xugrid)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.binary_dilation.html#xugrid.UgridDataArrayAccessor.binary_dilation">binary_dilation() (xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.binary_erosion.html#xugrid.UgridDataArrayAccessor.binary_erosion">binary_erosion() (xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.bounding_polygon.html#xugrid.Ugrid2d.bounding_polygon">bounding_polygon() (xugrid.Ugrid2d method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.bounds.html#xugrid.Ugrid1d.bounds">bounds (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.bounds.html#xugrid.Ugrid2d.bounds">(xugrid.Ugrid2d property)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.bounds.html#xugrid.UgridDataArrayAccessor.bounds">(xugrid.UgridDataArrayAccessor property)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.bounds.html#xugrid.UgridDatasetAccessor.bounds">(xugrid.UgridDatasetAccessor property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.burn_vector_geometry.html#xugrid.burn_vector_geometry">burn_vector_geometry() (in module xugrid)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.celltree.html#xugrid.Ugrid1d.celltree">celltree (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.celltree.html#xugrid.Ugrid2d.celltree">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.centroid_triangulation.html#xugrid.Ugrid2d.centroid_triangulation">centroid_triangulation (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.CentroidLocatorRegridder.html#xugrid.CentroidLocatorRegridder">CentroidLocatorRegridder (class in xugrid)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.centroids.html#xugrid.Ugrid2d.centroids">centroids (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.circumcenters.html#xugrid.Ugrid2d.circumcenters">circumcenters (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.compute_barycentric_weights.html#xugrid.Ugrid2d.compute_barycentric_weights">compute_barycentric_weights() (xugrid.Ugrid2d method)</a>
+</li>
+      <li><a href="api/xugrid.concat.html#xugrid.concat">concat() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.connected_components.html#xugrid.UgridDataArrayAccessor.connected_components">connected_components() (xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      <li><a href="api/xugrid.UgridRolesAccessor.connectivity.html#xugrid.UgridRolesAccessor.connectivity">connectivity (xugrid.UgridRolesAccessor property)</a>
+</li>
+      <li><a href="api/xugrid.plot.contour.html#xugrid.plot.contour">contour() (in module xugrid.plot)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.plot.contourf.html#xugrid.plot.contourf">contourf() (in module xugrid.plot)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.contract_vertices.html#xugrid.Ugrid1d.contract_vertices">contract_vertices() (xugrid.Ugrid1d method)</a>
+</li>
+      <li><a href="api/xugrid.UgridRolesAccessor.coordinates.html#xugrid.UgridRolesAccessor.coordinates">coordinates (xugrid.UgridRolesAccessor property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.coords.html#xugrid.Ugrid1d.coords">coords (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.coords.html#xugrid.Ugrid2d.coords">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.copy.html#xugrid.Ugrid1d.copy">copy() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.copy.html#xugrid.Ugrid2d.copy">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.create_data_array.html#xugrid.Ugrid1d.create_data_array">create_data_array() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.create_data_array.html#xugrid.Ugrid2d.create_data_array">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.create_snap_to_grid_dataframe.html#xugrid.create_snap_to_grid_dataframe">create_snap_to_grid_dataframe() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.crs.html#xugrid.UgridDataArrayAccessor.crs">crs (xugrid.UgridDataArrayAccessor property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDatasetAccessor.crs.html#xugrid.UgridDatasetAccessor.crs">(xugrid.UgridDatasetAccessor property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.UgridRolesAccessor.dimensions.html#xugrid.UgridRolesAccessor.dimensions">dimensions (xugrid.UgridRolesAccessor property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.dims.html#xugrid.Ugrid1d.dims">dims (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.dims.html#xugrid.Ugrid2d.dims">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.directed_edge_edge_connectivity.html#xugrid.Ugrid1d.directed_edge_edge_connectivity">directed_edge_edge_connectivity (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.directed_edge_edge_connectivity.html#xugrid.Ugrid2d.directed_edge_edge_connectivity">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.directed_node_node_connectivity.html#xugrid.Ugrid1d.directed_node_node_connectivity">directed_node_node_connectivity (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.directed_node_node_connectivity.html#xugrid.Ugrid2d.directed_node_node_connectivity">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.earcut_triangulate_polygons.html#xugrid.earcut_triangulate_polygons">earcut_triangulate_polygons() (in module xugrid)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.earcut_triangulate_polygons.html#xugrid.Ugrid2d.earcut_triangulate_polygons">(xugrid.Ugrid2d static method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.edge_bounds.html#xugrid.Ugrid1d.edge_bounds">edge_bounds (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.edge_bounds.html#xugrid.Ugrid2d.edge_bounds">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.edge_coordinates.html#xugrid.Ugrid1d.edge_coordinates">edge_coordinates (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.edge_coordinates.html#xugrid.Ugrid2d.edge_coordinates">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.edge_dimension.html#xugrid.Ugrid1d.edge_dimension">edge_dimension (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.edge_dimension.html#xugrid.Ugrid2d.edge_dimension">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.edge_edge_connectivity.html#xugrid.Ugrid1d.edge_edge_connectivity">edge_edge_connectivity (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.edge_edge_connectivity.html#xugrid.Ugrid2d.edge_edge_connectivity">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.edge_kdtree.html#xugrid.Ugrid1d.edge_kdtree">edge_kdtree (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.edge_kdtree.html#xugrid.Ugrid2d.edge_kdtree">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.edge_length.html#xugrid.Ugrid1d.edge_length">edge_length (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.edge_length.html#xugrid.Ugrid2d.edge_length">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.edge_node_connectivity.html#xugrid.Ugrid2d.edge_node_connectivity">edge_node_connectivity (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.edge_x.html#xugrid.Ugrid1d.edge_x">edge_x (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.edge_x.html#xugrid.Ugrid2d.edge_x">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.edge_y.html#xugrid.Ugrid1d.edge_y">edge_y (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.edge_y.html#xugrid.Ugrid2d.edge_y">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.exterior_edges.html#xugrid.Ugrid2d.exterior_edges">exterior_edges (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.exterior_faces.html#xugrid.Ugrid2d.exterior_faces">exterior_faces (xugrid.Ugrid2d property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid2d.face_bounds.html#xugrid.Ugrid2d.face_bounds">face_bounds (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.face_coordinates.html#xugrid.Ugrid2d.face_coordinates">face_coordinates (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.face_dimension.html#xugrid.Ugrid2d.face_dimension">face_dimension (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.face_edge_connectivity.html#xugrid.Ugrid2d.face_edge_connectivity">face_edge_connectivity (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.face_face_connectivity.html#xugrid.Ugrid2d.face_face_connectivity">face_face_connectivity (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.face_kdtree.html#xugrid.Ugrid2d.face_kdtree">face_kdtree (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.face_x.html#xugrid.Ugrid2d.face_x">face_x (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.face_y.html#xugrid.Ugrid2d.face_y">face_y (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.fill_value.html#xugrid.Ugrid1d.fill_value">fill_value (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.fill_value.html#xugrid.Ugrid2d.fill_value">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.format_connectivity_as_dense.html#xugrid.Ugrid1d.format_connectivity_as_dense">format_connectivity_as_dense() (xugrid.Ugrid1d static method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.format_connectivity_as_dense.html#xugrid.Ugrid2d.format_connectivity_as_dense">(xugrid.Ugrid2d static method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.format_connectivity_as_sparse.html#xugrid.Ugrid1d.format_connectivity_as_sparse">format_connectivity_as_sparse() (xugrid.Ugrid1d static method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.format_connectivity_as_sparse.html#xugrid.Ugrid2d.format_connectivity_as_sparse">(xugrid.Ugrid2d static method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArray.from_data.html#xugrid.UgridDataArray.from_data">from_data() (xugrid.UgridDataArray static method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.from_dataset.html#xugrid.Ugrid1d.from_dataset">from_dataset() (xugrid.Ugrid1d class method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.from_dataset.html#xugrid.Ugrid2d.from_dataset">(xugrid.Ugrid2d class method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.from_geodataframe.html#xugrid.Ugrid1d.from_geodataframe">from_geodataframe() (xugrid.Ugrid1d class method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.from_geodataframe.html#xugrid.Ugrid2d.from_geodataframe">(xugrid.Ugrid2d class method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataset.from_geodataframe.html#xugrid.UgridDataset.from_geodataframe">(xugrid.UgridDataset static method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.from_meshkernel.html#xugrid.Ugrid1d.from_meshkernel">from_meshkernel() (xugrid.Ugrid1d class method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.from_meshkernel.html#xugrid.Ugrid2d.from_meshkernel">(xugrid.Ugrid2d class method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.from_shapely.html#xugrid.Ugrid1d.from_shapely">from_shapely() (xugrid.Ugrid1d static method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.from_shapely.html#xugrid.Ugrid2d.from_shapely">(xugrid.Ugrid2d static method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.from_structured.html#xugrid.Ugrid2d.from_structured">from_structured() (xugrid.Ugrid2d static method)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArray.from_structured2d.html#xugrid.UgridDataArray.from_structured2d">from_structured2d() (xugrid.UgridDataArray static method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataset.from_structured2d.html#xugrid.UgridDataset.from_structured2d">(xugrid.UgridDataset static method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.from_structured_bounds.html#xugrid.Ugrid2d.from_structured_bounds">from_structured_bounds() (xugrid.Ugrid2d static method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.from_structured_intervals1d.html#xugrid.Ugrid2d.from_structured_intervals1d">from_structured_intervals1d() (xugrid.Ugrid2d static method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.from_structured_intervals2d.html#xugrid.Ugrid2d.from_structured_intervals2d">from_structured_intervals2d() (xugrid.Ugrid2d static method)</a>
+</li>
+      <li><a href="api/xugrid.full_like.html#xugrid.full_like">full_like() (in module xugrid)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.get_connectivity_matrix.html#xugrid.Ugrid1d.get_connectivity_matrix">get_connectivity_matrix() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.get_connectivity_matrix.html#xugrid.Ugrid2d.get_connectivity_matrix">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.get_coordinates.html#xugrid.Ugrid1d.get_coordinates">get_coordinates() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.get_coordinates.html#xugrid.Ugrid2d.get_coordinates">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.UgridDatasetAccessor.grid.html#xugrid.UgridDatasetAccessor.grid">grid (xugrid.UgridDatasetAccessor property)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.grids.html#xugrid.UgridDataArrayAccessor.grids">grids (xugrid.UgridDataArrayAccessor property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.plot.imshow.html#xugrid.plot.imshow">imshow() (in module xugrid.plot)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.interpolate_na.html#xugrid.UgridDataArrayAccessor.interpolate_na">interpolate_na() (xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.intersect_edges.html#xugrid.Ugrid1d.intersect_edges">intersect_edges() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.intersect_edges.html#xugrid.Ugrid2d.intersect_edges">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.intersect_line.html#xugrid.Ugrid1d.intersect_line">intersect_line() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.intersect_line.html#xugrid.Ugrid2d.intersect_line">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.intersect_line.html#xugrid.UgridDataArrayAccessor.intersect_line">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.intersect_line.html#xugrid.UgridDatasetAccessor.intersect_line">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.intersect_linestring.html#xugrid.Ugrid1d.intersect_linestring">intersect_linestring() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.intersect_linestring.html#xugrid.Ugrid2d.intersect_linestring">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.intersect_linestring.html#xugrid.UgridDataArrayAccessor.intersect_linestring">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.intersect_linestring.html#xugrid.UgridDatasetAccessor.intersect_linestring">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.is_cyclic.html#xugrid.Ugrid1d.is_cyclic">is_cyclic (xugrid.Ugrid1d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.isel.html#xugrid.Ugrid1d.isel">isel() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.isel.html#xugrid.Ugrid2d.isel">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid2d.label_partitions.html#xugrid.Ugrid2d.label_partitions">label_partitions() (xugrid.Ugrid2d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.label_partitions.html#xugrid.UgridDataArrayAccessor.label_partitions">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.laplace_interpolate.html#xugrid.UgridDataArrayAccessor.laplace_interpolate">laplace_interpolate() (xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      <li><a href="api/xugrid.plot.line.html#xugrid.plot.line">line() (in module xugrid.plot)</a>
+</li>
+      <li><a href="api/xugrid.load_dataarray.html#xugrid.load_dataarray">load_dataarray() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.load_dataset.html#xugrid.load_dataset">load_dataset() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.locate_bounding_box.html#xugrid.Ugrid2d.locate_bounding_box">locate_bounding_box() (xugrid.Ugrid2d method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.locate_nearest_edge.html#xugrid.Ugrid1d.locate_nearest_edge">locate_nearest_edge() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.locate_nearest_edge.html#xugrid.Ugrid2d.locate_nearest_edge">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.locate_nearest_face.html#xugrid.Ugrid2d.locate_nearest_face">locate_nearest_face() (xugrid.Ugrid2d method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.locate_nearest_node.html#xugrid.Ugrid1d.locate_nearest_node">locate_nearest_node() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.locate_nearest_node.html#xugrid.Ugrid2d.locate_nearest_node">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.locate_points.html#xugrid.Ugrid1d.locate_points">locate_points() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.locate_points.html#xugrid.Ugrid2d.locate_points">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.merge.html#xugrid.merge">merge() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.merge_partitions.html#xugrid.merge_partitions">merge_partitions() (in module xugrid)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid1d.merge_partitions.html#xugrid.Ugrid1d.merge_partitions">(xugrid.Ugrid1d static method)</a>
+</li>
+        <li><a href="api/xugrid.Ugrid2d.merge_partitions.html#xugrid.Ugrid2d.merge_partitions">(xugrid.Ugrid2d static method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.mesh.html#xugrid.Ugrid1d.mesh">mesh (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.mesh.html#xugrid.Ugrid2d.mesh">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.meshkernel.html#xugrid.Ugrid1d.meshkernel">meshkernel (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.meshkernel.html#xugrid.Ugrid2d.meshkernel">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.n_edge.html#xugrid.Ugrid1d.n_edge">n_edge (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.n_edge.html#xugrid.Ugrid2d.n_edge">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.n_face.html#xugrid.Ugrid2d.n_face">n_face (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.n_node.html#xugrid.Ugrid1d.n_node">n_node (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.n_node.html#xugrid.Ugrid2d.n_node">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.name.html#xugrid.UgridDataArrayAccessor.name">name (xugrid.UgridDataArrayAccessor property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDatasetAccessor.name.html#xugrid.UgridDatasetAccessor.name">(xugrid.UgridDatasetAccessor property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.names.html#xugrid.UgridDataArrayAccessor.names">names (xugrid.UgridDataArrayAccessor property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDatasetAccessor.names.html#xugrid.UgridDatasetAccessor.names">(xugrid.UgridDatasetAccessor property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.NetworkGridder.html#xugrid.NetworkGridder">NetworkGridder (class in xugrid)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.node_coordinates.html#xugrid.Ugrid1d.node_coordinates">node_coordinates (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.node_coordinates.html#xugrid.Ugrid2d.node_coordinates">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.node_dimension.html#xugrid.Ugrid1d.node_dimension">node_dimension (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.node_dimension.html#xugrid.Ugrid2d.node_dimension">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.node_edge_connectivity.html#xugrid.Ugrid1d.node_edge_connectivity">node_edge_connectivity (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.node_edge_connectivity.html#xugrid.Ugrid2d.node_edge_connectivity">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.node_face_connectivity.html#xugrid.Ugrid2d.node_face_connectivity">node_face_connectivity (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.node_kdtree.html#xugrid.Ugrid1d.node_kdtree">node_kdtree (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.node_kdtree.html#xugrid.Ugrid2d.node_kdtree">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.node_node_connectivity.html#xugrid.Ugrid1d.node_node_connectivity">node_node_connectivity (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.node_node_connectivity.html#xugrid.Ugrid2d.node_node_connectivity">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.ones_like.html#xugrid.ones_like">ones_like() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.open_dataarray.html#xugrid.open_dataarray">open_dataarray() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.open_dataset.html#xugrid.open_dataset">open_dataset() (in module xugrid)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.open_mfdataset.html#xugrid.open_mfdataset">open_mfdataset() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.open_zarr.html#xugrid.open_zarr">open_zarr() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.OverlapRegridder.html#xugrid.OverlapRegridder">OverlapRegridder (class in xugrid)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid2d.partition.html#xugrid.Ugrid2d.partition">partition() (xugrid.Ugrid2d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.partition.html#xugrid.UgridDataArrayAccessor.partition">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.partition.html#xugrid.UgridDatasetAccessor.partition">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.partition_by_label.html#xugrid.UgridDataArrayAccessor.partition_by_label">partition_by_label() (xugrid.UgridDataArrayAccessor method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDatasetAccessor.partition_by_label.html#xugrid.UgridDatasetAccessor.partition_by_label">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.plot.pcolormesh.html#xugrid.plot.pcolormesh">pcolormesh() (in module xugrid.plot)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.perimeter.html#xugrid.Ugrid2d.perimeter">perimeter (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.plot.html#xugrid.Ugrid1d.plot">plot() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.plot.html#xugrid.Ugrid2d.plot">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.polygonize.html#xugrid.polygonize">polygonize() (in module xugrid)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid2d.rasterize.html#xugrid.Ugrid2d.rasterize">rasterize() (xugrid.Ugrid2d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.rasterize.html#xugrid.UgridDataArrayAccessor.rasterize">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.rasterize.html#xugrid.UgridDatasetAccessor.rasterize">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.rasterize_like.html#xugrid.Ugrid2d.rasterize_like">rasterize_like() (xugrid.Ugrid2d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.rasterize_like.html#xugrid.UgridDataArrayAccessor.rasterize_like">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.rasterize_like.html#xugrid.UgridDatasetAccessor.rasterize_like">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.refine_by_vertices.html#xugrid.Ugrid1d.refine_by_vertices">refine_by_vertices() (xugrid.Ugrid1d method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.reindex_like.html#xugrid.Ugrid1d.reindex_like">reindex_like() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.reindex_like.html#xugrid.Ugrid2d.reindex_like">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.reindex_like.html#xugrid.UgridDataArrayAccessor.reindex_like">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.reindex_like.html#xugrid.UgridDatasetAccessor.reindex_like">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.RelativeOverlapRegridder.html#xugrid.RelativeOverlapRegridder">RelativeOverlapRegridder (class in xugrid)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.remove_self_loops.html#xugrid.Ugrid1d.remove_self_loops">remove_self_loops() (xugrid.Ugrid1d method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.rename.html#xugrid.Ugrid1d.rename">rename() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.rename.html#xugrid.Ugrid2d.rename">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.rename.html#xugrid.UgridDataArrayAccessor.rename">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.rename.html#xugrid.UgridDatasetAccessor.rename">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.reverse_cuthill_mckee.html#xugrid.Ugrid2d.reverse_cuthill_mckee">reverse_cuthill_mckee() (xugrid.Ugrid2d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee.html#xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.plot.scatter.html#xugrid.plot.scatter">scatter() (in module xugrid.plot)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.sel.html#xugrid.Ugrid1d.sel">sel() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.sel.html#xugrid.Ugrid2d.sel">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.sel.html#xugrid.UgridDataArrayAccessor.sel">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.sel.html#xugrid.UgridDatasetAccessor.sel">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.sel_points.html#xugrid.Ugrid1d.sel_points">sel_points() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.sel_points.html#xugrid.Ugrid2d.sel_points">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.sel_points.html#xugrid.UgridDataArrayAccessor.sel_points">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.sel_points.html#xugrid.UgridDatasetAccessor.sel_points">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.set_crs.html#xugrid.Ugrid1d.set_crs">set_crs() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.set_crs.html#xugrid.Ugrid2d.set_crs">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.set_crs.html#xugrid.UgridDataArrayAccessor.set_crs">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.set_crs.html#xugrid.UgridDatasetAccessor.set_crs">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid1d.set_node_coords.html#xugrid.Ugrid1d.set_node_coords">set_node_coords() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.set_node_coords.html#xugrid.Ugrid2d.set_node_coords">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.set_node_coords.html#xugrid.UgridDataArrayAccessor.set_node_coords">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.set_node_coords.html#xugrid.UgridDatasetAccessor.set_node_coords">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.sizes.html#xugrid.Ugrid1d.sizes">sizes (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.sizes.html#xugrid.Ugrid2d.sizes">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.snap_nodes.html#xugrid.snap_nodes">snap_nodes() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.snap_to_grid.html#xugrid.snap_to_grid">snap_to_grid() (in module xugrid)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.start_index.html#xugrid.Ugrid1d.start_index">start_index (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.start_index.html#xugrid.Ugrid2d.start_index">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.plot.surface.html#xugrid.plot.surface">surface() (in module xugrid.plot)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid2d.tesselate_centroidal_voronoi.html#xugrid.Ugrid2d.tesselate_centroidal_voronoi">tesselate_centroidal_voronoi() (xugrid.Ugrid2d method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.tesselate_circumcenter_voronoi.html#xugrid.Ugrid2d.tesselate_circumcenter_voronoi">tesselate_circumcenter_voronoi() (xugrid.Ugrid2d method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid1d.to_crs.html#xugrid.Ugrid1d.to_crs">to_crs() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.to_crs.html#xugrid.Ugrid2d.to_crs">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.to_crs.html#xugrid.UgridDataArrayAccessor.to_crs">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.to_crs.html#xugrid.UgridDatasetAccessor.to_crs">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.to_dataset.html#xugrid.Ugrid1d.to_dataset">to_dataset() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.to_dataset.html#xugrid.Ugrid2d.to_dataset">(xugrid.Ugrid2d method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.to_dataset.html#xugrid.UgridDataArrayAccessor.to_dataset">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.to_dataset.html#xugrid.UgridDatasetAccessor.to_dataset">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.to_edge.html#xugrid.UgridDataArrayAccessor.to_edge">to_edge() (xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.to_face.html#xugrid.UgridDataArrayAccessor.to_face">to_face() (xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.to_geodataframe.html#xugrid.UgridDataArrayAccessor.to_geodataframe">to_geodataframe() (xugrid.UgridDataArrayAccessor method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDatasetAccessor.to_geodataframe.html#xugrid.UgridDatasetAccessor.to_geodataframe">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.to_netcdf.html#xugrid.UgridDataArrayAccessor.to_netcdf">to_netcdf() (xugrid.UgridDataArrayAccessor method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDatasetAccessor.to_netcdf.html#xugrid.UgridDatasetAccessor.to_netcdf">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.to_node.html#xugrid.UgridDataArrayAccessor.to_node">to_node() (xugrid.UgridDataArrayAccessor method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.to_nonperiodic.html#xugrid.Ugrid2d.to_nonperiodic">to_nonperiodic() (xugrid.Ugrid2d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.to_nonperiodic.html#xugrid.UgridDataArrayAccessor.to_nonperiodic">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.to_nonperiodic.html#xugrid.UgridDatasetAccessor.to_nonperiodic">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid2d.to_periodic.html#xugrid.Ugrid2d.to_periodic">to_periodic() (xugrid.Ugrid2d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataArrayAccessor.to_periodic.html#xugrid.UgridDataArrayAccessor.to_periodic">(xugrid.UgridDataArrayAccessor method)</a>
+</li>
+        <li><a href="api/xugrid.UgridDatasetAccessor.to_periodic.html#xugrid.UgridDatasetAccessor.to_periodic">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.to_shapely.html#xugrid.Ugrid1d.to_shapely">to_shapely() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.to_shapely.html#xugrid.Ugrid2d.to_shapely">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.to_zarr.html#xugrid.UgridDataArrayAccessor.to_zarr">to_zarr() (xugrid.UgridDataArrayAccessor method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDatasetAccessor.to_zarr.html#xugrid.UgridDatasetAccessor.to_zarr">(xugrid.UgridDatasetAccessor method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.topological_sort_by_dfs.html#xugrid.Ugrid1d.topological_sort_by_dfs">topological_sort_by_dfs() (xugrid.Ugrid1d method)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.topology.html#xugrid.UgridDataArrayAccessor.topology">topology (xugrid.UgridDataArrayAccessor property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDatasetAccessor.topology.html#xugrid.UgridDatasetAccessor.topology">(xugrid.UgridDatasetAccessor property)</a>
+</li>
+        <li><a href="api/xugrid.UgridRolesAccessor.topology.html#xugrid.UgridRolesAccessor.topology">(xugrid.UgridRolesAccessor property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.topology_dimension.html#xugrid.Ugrid1d.topology_dimension">topology_dimension (xugrid.Ugrid1d property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.topology_dimension.html#xugrid.Ugrid2d.topology_dimension">(xugrid.Ugrid2d property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.topology_subset.html#xugrid.Ugrid1d.topology_subset">topology_subset() (xugrid.Ugrid1d method)</a>
+
+      <ul>
+        <li><a href="api/xugrid.Ugrid2d.topology_subset.html#xugrid.Ugrid2d.topology_subset">(xugrid.Ugrid2d method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.total_bounds.html#xugrid.UgridDataArrayAccessor.total_bounds">total_bounds (xugrid.UgridDataArrayAccessor property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDatasetAccessor.total_bounds.html#xugrid.UgridDatasetAccessor.total_bounds">(xugrid.UgridDatasetAccessor property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid2d.triangulate.html#xugrid.Ugrid2d.triangulate">triangulate() (xugrid.Ugrid2d method)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.triangulation.html#xugrid.Ugrid2d.triangulation">triangulation (xugrid.Ugrid2d property)</a>
+</li>
+      <li><a href="api/xugrid.plot.tripcolor.html#xugrid.plot.tripcolor">tripcolor() (in module xugrid.plot)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.UgridDataArray.ugrid.html#xugrid.UgridDataArray.ugrid">ugrid (xugrid.UgridDataArray property)</a>
+
+      <ul>
+        <li><a href="api/xugrid.UgridDataset.ugrid.html#xugrid.UgridDataset.ugrid">(xugrid.UgridDataset property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/xugrid.Ugrid1d.html#xugrid.Ugrid1d">Ugrid1d (class in xugrid)</a>
+</li>
+      <li><a href="api/xugrid.Ugrid2d.html#xugrid.Ugrid2d">Ugrid2d (class in xugrid)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.UgridDataArray.html#xugrid.UgridDataArray">UgridDataArray (class in xugrid)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataArrayAccessor.html#xugrid.UgridDataArrayAccessor">UgridDataArrayAccessor (class in xugrid)</a>
+</li>
+      <li><a href="api/xugrid.UgridDataset.html#xugrid.UgridDataset">UgridDataset (class in xugrid)</a>
+</li>
+      <li><a href="api/xugrid.UgridDatasetAccessor.html#xugrid.UgridDatasetAccessor">UgridDatasetAccessor (class in xugrid)</a>
+</li>
+      <li><a href="api/xugrid.UgridRolesAccessor.html#xugrid.UgridRolesAccessor">UgridRolesAccessor (class in xugrid)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid2d.validate_edge_node_connectivity.html#xugrid.Ugrid2d.validate_edge_node_connectivity">validate_edge_node_connectivity() (xugrid.Ugrid2d method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.Ugrid2d.voronoi_topology.html#xugrid.Ugrid2d.voronoi_topology">voronoi_topology (xugrid.Ugrid2d property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/xugrid.zeros_like.html#xugrid.zeros_like">zeros_like() (in module xugrid)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Deltares.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

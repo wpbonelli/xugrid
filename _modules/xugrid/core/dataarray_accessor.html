@@ -1,0 +1,1417 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xugrid.core.dataarray_accessor &#8212; Xugrid 0.14.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/theme-deltares.css?v=45942d5c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=3a3a8e7f"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/xugrid/core/dataarray_accessor';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.14.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/xugrid-logo.svg" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/xugrid-logo.svg" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Xugrid</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev_docs.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Deltares/xugrid" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deltares.nl/en/" title="Deltares" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/deltares-blue.svg" class="icon-link-image" alt="Deltares"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../dev_docs.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Deltares/xugrid" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" class="icon-link-image" alt="GitHub"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://deltares.nl/en/" title="Deltares" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/deltares-blue.svg" class="icon-link-image" alt="Deltares"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">xugrid.core.dataarray_accessor</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for xugrid.core.dataarray_accessor</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.sparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+
+<span class="c1"># from xugrid.plot.pyvista import to_pyvista_grid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xugrid.core.accessorbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbstractUgridAccessor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xugrid.core.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">UncachedAccessor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xugrid.core.wrap</span><span class="w"> </span><span class="kn">import</span> <span class="n">UgridDataArray</span><span class="p">,</span> <span class="n">UgridDataset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xugrid.plot.plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">_PlotMethods</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xugrid.ugrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">connectivity</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xugrid.ugrid.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">interpolate_na_helper</span><span class="p">,</span>
+    <span class="n">laplace_interpolate</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xugrid.ugrid.ugrid1d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ugrid1d</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xugrid.ugrid.ugrid2d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ugrid2d</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xugrid.ugrid.ugridbase</span><span class="w"> </span><span class="kn">import</span> <span class="n">UgridType</span>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.html#xugrid.UgridDataArrayAccessor">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">UgridDataArrayAccessor</span><span class="p">(</span><span class="n">AbstractUgridAccessor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This &quot;accessor&quot; makes operations using the UGRID topology available via the</span>
+<span class="sd">    ``.ugrid`` attribute for UgridDataArrays and UgridDatasets.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.__init__">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.html#xugrid.UgridDataArrayAccessor.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span> <span class="n">grid</span><span class="p">:</span> <span class="n">UgridType</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">grids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">UgridType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The UGRID topology of this DataArry, as a list. Included for</span>
+<span class="sd">        consistency with UgridDataset.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Name of the UGRID topology of this DataArray.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Name of the UGRID topology, as a list. Included for consistency with</span>
+<span class="sd">        UgridDataset.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">topology</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">UgridType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Mapping from name to UGRID topology.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Mapping from grid name to tuple containing ``minx, miny, maxx, maxy``</span>
+<span class="sd">        values of the grid&#39;s node coordinates.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">bounds</span><span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">total_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a tuple containing ``minx, miny, maxx, maxy`` values of the grid&#39;s</span>
+<span class="sd">        node coordinates.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+
+    <span class="n">plot</span> <span class="o">=</span> <span class="n">UncachedAccessor</span><span class="p">(</span><span class="n">_PlotMethods</span><span class="p">)</span>
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.rename">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.rename.html#xugrid.UgridDataArrayAccessor.rename">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UgridDataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Give a new name to the UGRID topology and update the associated</span>
+<span class="sd">        coordinate and dimension names in the DataArray.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name: str</span>
+<span class="sd">            The new name of the topology.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span>
+        <span class="n">new_grid</span><span class="p">,</span> <span class="n">name_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">return_name_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">to_rename</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+        <span class="n">new_obj</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">name_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">to_rename</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="n">new_obj</span><span class="p">,</span> <span class="n">new_grid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.assign_node_coords">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.assign_node_coords.html#xugrid.UgridDataArrayAccessor.assign_node_coords">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">assign_node_coords</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UgridDataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Assign node coordinates from the grid to the object.</span>
+
+<span class="sd">        Returns a new object with all the original data in addition to the new</span>
+<span class="sd">        node coordinates of the grid.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        assigned: UgridDataset</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">assign_node_coords</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.assign_edge_coords">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.assign_edge_coords.html#xugrid.UgridDataArrayAccessor.assign_edge_coords">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">assign_edge_coords</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UgridDataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Assign edge coordinates from the grid to the object.</span>
+
+<span class="sd">        Returns a new object with all the original data in addition to the new</span>
+<span class="sd">        node coordinates of the grid.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        assigned: UgridDataset</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">assign_edge_coords</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.assign_face_coords">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.assign_face_coords.html#xugrid.UgridDataArrayAccessor.assign_face_coords">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">assign_face_coords</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UgridDataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Assign face coordinates from the grid to the object.</span>
+
+<span class="sd">        Returns a new object with all the original data in addition to the new</span>
+<span class="sd">        node coordinates of the grid.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        assigned: UgridDataset</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">topology_dimension</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Cannot set face coords from a Ugrid1D topology&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">assign_face_coords</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.set_node_coords">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.set_node_coords.html#xugrid.UgridDataArrayAccessor.set_node_coords">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_node_coords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">node_y</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Given names of x and y coordinates of the nodes of an object, set them</span>
+<span class="sd">        as the coordinates in the grid.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        node_x: str</span>
+<span class="sd">            Name of the x coordinate of the nodes in the object.</span>
+<span class="sd">        node_y: str</span>
+<span class="sd">            Name of the y coordinate of the nodes in the object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_node_coords</span><span class="p">(</span><span class="n">node_x</span><span class="p">,</span> <span class="n">node_y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.sel">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.sel.html#xugrid.UgridDataArrayAccessor.sel">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new object, a subselection in the UGRID x and y coordinates.</span>
+
+<span class="sd">        The indexing for x and y always occurs orthogonally, i.e.:</span>
+<span class="sd">        ``.sel(x=[0.0, 5.0], y=[10.0, 15.0])`` results in a four points. For</span>
+<span class="sd">        vectorized indexing (equal to ``zip``ing through x and y), see</span>
+<span class="sd">        ``.sel_points``.</span>
+
+<span class="sd">        Depending on the nature of the x and y indexers, a xugrid or xarray</span>
+<span class="sd">        object is returned:</span>
+
+<span class="sd">        * slice without step: ``x=slice(-100, 100)``: returns xugrid object, a</span>
+<span class="sd">          part of the unstructured grid.</span>
+<span class="sd">        * slice with step: ``x=slice(-100, 100, 10)``: returns xarray object, a</span>
+<span class="sd">          series of points (x=[-100, -90, -80, ..., 90, 100]).</span>
+<span class="sd">        * a scalar: ``x=5.0``: returns xarray object, a point.</span>
+<span class="sd">        * an array: ``x=[1.0, 15.0, 17.0]``: returns xarray object, a series of</span>
+<span class="sd">          points.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x: float, 1d array, slice</span>
+<span class="sd">        y: float, 1d array, slice</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        selection: Union[UgridDataArray, UgridDataset, xr.DataArray, xr.Dataset]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.sel_points">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.sel_points.html#xugrid.UgridDataArrayAccessor.sel_points">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sel_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">out_of_bounds</span><span class="o">=</span><span class="s2">&quot;warn&quot;</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Select points in the unstructured grid.</span>
+
+<span class="sd">        Out-of-bounds points are ignored. They may be identified via the</span>
+<span class="sd">        ``index`` coordinate of the returned selection.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x: ndarray of floats with shape ``(n_points,)``</span>
+<span class="sd">        y: ndarray of floats with shape ``(n_points,)``</span>
+<span class="sd">        out_of_bounds: str, default: &quot;warn&quot;</span>
+<span class="sd">            What to do when points are located outside of any feature:</span>
+
+<span class="sd">            * raise: raise a ValueError.</span>
+<span class="sd">            * ignore: return ``fill_value`` for the out of bounds points.</span>
+<span class="sd">            * warn: give a warning and return NaN for the out of bounds points.</span>
+<span class="sd">            * drop: drop the out of bounds points. They may be identified</span>
+<span class="sd">              via the ``index`` coordinate of the returned selection.</span>
+<span class="sd">        fill_value: scalar, DataArray, Dataset, or callable, optional, default: np.nan</span>
+<span class="sd">            Value to assign to out-of-bounds points if out_of_bounds is warn</span>
+<span class="sd">            or ignore. Forwarded to xarray&#39;s ``.where()`` method.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        points: Union[xr.DataArray, xr.Dataset]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">sel_points</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">out_of_bounds</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.rasterize">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.rasterize.html#xugrid.UgridDataArrayAccessor.rasterize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rasterize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resolution</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Rasterize unstructured grid by sampling.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        resolution: float</span>
+<span class="sd">            Spacing in x and y.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        rasterized: xr.DataArray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">rasterize</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raster</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.rasterize_like">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.rasterize_like.html#xugrid.UgridDataArrayAccessor.rasterize_like">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rasterize_like</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Rasterize unstructured grid by sampling on the x and y coordinates</span>
+<span class="sd">        of ``other``.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        resolution: float</span>
+<span class="sd">            Spacing in x and y.</span>
+<span class="sd">        other: Union[xr.DataArray, xr.Dataset]</span>
+<span class="sd">            Object to take x and y coordinates from.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        rasterized: xr.DataArray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">rasterize_like</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">other</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">other</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raster</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.to_periodic">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.to_periodic.html#xugrid.UgridDataArrayAccessor.to_periodic">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_periodic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert this grid to a periodic grid, where the rightmost boundary</span>
+<span class="sd">        shares its nodes with the leftmost boundary.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        periodic: UgridDataArray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">grid</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">to_periodic</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.to_nonperiodic">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.to_nonperiodic.html#xugrid.UgridDataArrayAccessor.to_nonperiodic">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_nonperiodic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xmax</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert this grid from a periodic grid (where the rightmost boundary shares its</span>
+<span class="sd">        nodes with the leftmost boundary) to an aperiodic grid, where the leftmost nodes</span>
+<span class="sd">        are separate from the rightmost nodes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xmax: float</span>
+<span class="sd">            The x-value of the newly created rightmost boundary nodes.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        nonperiodic: UgridDataArray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">grid</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">to_nonperiodic</span><span class="p">(</span><span class="n">xmax</span><span class="o">=</span><span class="n">xmax</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_to_facet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">facet</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">newdim</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Map the data from one facet to another.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        facet: str</span>
+<span class="sd">            node, edge, face</span>
+<span class="sd">        newdim: str</span>
+<span class="sd">            how to name the new dimension, e.g. three nodes</span>
+<span class="sd">            per triangle face, two nodes per edge, etc.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span>
+
+        <span class="n">gridfacets</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">facets</span>
+        <span class="k">if</span> <span class="n">facet</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gridfacets</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Cannot map to </span><span class="si">{</span><span class="n">facet</span><span class="si">}</span><span class="s2"> for a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> topology.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">newdim</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">dims</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Dimension </span><span class="si">{</span><span class="n">newdim</span><span class="si">}</span><span class="s2"> already exists. Please provide a new dimension name.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">source_dim</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">target_dim</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">facet</span><span class="si">}</span><span class="s2">_dimension&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">source_dim</span> <span class="o">==</span> <span class="n">target_dim</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;No conversion needed, data is already </span><span class="si">{</span><span class="n">facet</span><span class="si">}</span><span class="s2">-associated.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Find out on which facet we&#39;re currently located</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">gridfacets</span><span class="o">.</span><span class="n">items</span><span class="p">()}[</span><span class="n">source_dim</span><span class="p">]</span>
+        <span class="n">connectivity</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">format_connectivity_as_dense</span><span class="p">(</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">facet</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">_connectivity&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">indexer</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">connectivity</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="p">(</span><span class="n">target_dim</span><span class="p">,</span> <span class="n">newdim</span><span class="p">))</span>
+        <span class="c1"># Ensure the source dimension is not chunked for efficient indexing.</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">chunk</span><span class="p">({</span><span class="n">source_dim</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">})</span>
+        <span class="c1"># Set the fill values (-1) to NaN</span>
+        <span class="n">mapped</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">isel</span><span class="p">({</span><span class="n">source_dim</span><span class="p">:</span> <span class="n">indexer</span><span class="p">})</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">indexer</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="n">mapped</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span>
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.to_node">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.to_node.html#xugrid.UgridDataArrayAccessor.to_node">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;nmax&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Map data to nodes.</span>
+
+<span class="sd">        Creates a new dimension representing the contributing source elements</span>
+<span class="sd">        for each node, as multiple faces/edges can connect to a single node.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dim : str, optional</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        mapped: UgridDataArray</span>
+<span class="sd">            A new UgridDataArray with data mapped to the nodes of the grid.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Compute the mean elevation based on the surrounding faces for each node:</span>
+
+<span class="sd">        &gt;&gt;&gt; node_elevation = face_elevation.to_node().mean(&quot;contributors&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_facet</span><span class="p">(</span><span class="s2">&quot;node&quot;</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.to_edge">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.to_edge.html#xugrid.UgridDataArrayAccessor.to_edge">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;nmax&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Map data to edges.</span>
+
+<span class="sd">        Creates a new dimension representing the contributing source elements</span>
+<span class="sd">        for each node, as two nodes or two faces are connected to an edge.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dim : str, optional</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        mapped: UgridDataArray</span>
+<span class="sd">            A new UgridDataArray with data mapped to the edges of the grid.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Compute the mean elevation based on the nodes for each edge:</span>
+
+<span class="sd">        &gt;&gt;&gt; edge_elevation = node_elevation.to_edge().mean(&quot;contributors&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_facet</span><span class="p">(</span><span class="s2">&quot;edge&quot;</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.to_face">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.to_face.html#xugrid.UgridDataArrayAccessor.to_face">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_face</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dim</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;nmax&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Map data to faces.</span>
+
+<span class="sd">        Creates a new dimension representing the contributing source elements</span>
+<span class="sd">        for each node, as two edges or multiple nodes are connected to a face.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dim : str, optional</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        mapped: UgridDataArray</span>
+<span class="sd">            A new UgridDataArray with data mapped to the faces of the grid.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Compute the mean elevation based on the nodes for each face:</span>
+
+<span class="sd">        &gt;&gt;&gt; face_elevation = node_elevation.to_face().mean(&quot;contributors&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_facet</span><span class="p">(</span><span class="s2">&quot;face&quot;</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.intersect_line">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.intersect_line.html#xugrid.UgridDataArrayAccessor.intersect_line">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">intersect_line</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">end</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Intersect a line with the grid of this data, and fetch the values of</span>
+<span class="sd">        the intersected faces.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obj: xr.DataArray or xr.Dataset</span>
+<span class="sd">        start: sequence of two floats</span>
+<span class="sd">            coordinate pair (x, y), designating the start point of the line.</span>
+<span class="sd">        end: sequence of two floats</span>
+<span class="sd">            coordinate pair (x, y), designating the end point of the line.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        intersection: xr.DataArray</span>
+<span class="sd">            The length along the line is returned as the &quot;s&quot; coordinate.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">intersect_line</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.intersect_linestring">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.intersect_linestring.html#xugrid.UgridDataArrayAccessor.intersect_linestring">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">intersect_linestring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">linestring</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Intersect the grid along a collection of linestrings. Returns a new DataArray</span>
+<span class="sd">        with the values for each intersected segment.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        linestring: shapely.LineString</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        intersection: xr.DataArray</span>
+<span class="sd">            The length along the linestring is returned as the &quot;s&quot; coordinate.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">intersect_linestring</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">linestring</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">crs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Coordinate Reference System (CRS) represented as a ``pyproj.CRS`` object.</span>
+
+<span class="sd">        Returns None if the CRS is not set.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        crs: dict</span>
+<span class="sd">            A dictionary containing the name of the grid and its CRS.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">crs</span><span class="p">}</span>
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.set_crs">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.set_crs.html#xugrid.UgridDataArrayAccessor.set_crs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_crs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">crs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;pyproj.CRS&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># type: ignore # noqa</span>
+        <span class="n">epsg</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">allow_override</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the Coordinate Reference System (CRS) of a UGRID topology.</span>
+
+<span class="sd">        NOTE: The underlying geometries are not transformed to this CRS. To</span>
+<span class="sd">        transform the geometries to a new CRS, use the ``to_crs`` method.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        crs : pyproj.CRS, optional if `epsg` is specified</span>
+<span class="sd">            The value can be anything accepted</span>
+<span class="sd">            by :meth:`pyproj.CRS.from_user_input() &lt;pyproj.crs.CRS.from_user_input&gt;`,</span>
+<span class="sd">            such as an authority string (eg &quot;EPSG:4326&quot;) or a WKT string.</span>
+<span class="sd">        epsg : int, optional if `crs` is specified</span>
+<span class="sd">            EPSG code specifying the projection.</span>
+<span class="sd">        allow_override : bool, default False</span>
+<span class="sd">            If the the UGRID topology already has a CRS, allow to replace the</span>
+<span class="sd">            existing CRS, even when both are not equal.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="n">crs</span><span class="p">,</span> <span class="n">epsg</span><span class="p">,</span> <span class="n">allow_override</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.to_crs">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.to_crs.html#xugrid.UgridDataArrayAccessor.to_crs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_crs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">crs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;pyproj.CRS&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># type: ignore # noqa</span>
+        <span class="n">epsg</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UgridDataArray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Transform geometries to a new coordinate reference system.</span>
+<span class="sd">        Transform all geometries in an active geometry column to a different coordinate</span>
+<span class="sd">        reference system. The ``crs`` attribute on the current Ugrid must</span>
+<span class="sd">        be set. Either ``crs`` or ``epsg`` may be specified for output.</span>
+
+<span class="sd">        This method will transform all points in all objects. It has no notion</span>
+<span class="sd">        of projecting the cells. All segments joining points are assumed to be</span>
+<span class="sd">        lines in the current projection, not geodesics. Objects crossing the</span>
+<span class="sd">        dateline (or other projection boundary) will have undesirable behavior.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        crs : pyproj.CRS, optional if `epsg` is specified</span>
+<span class="sd">            The value can be anything accepted by</span>
+<span class="sd">            :meth:`pyproj.CRS.from_user_input() &lt;pyproj.crs.CRS.from_user_input&gt;`,</span>
+<span class="sd">            such as an authority string (eg &quot;EPSG:4326&quot;) or a WKT string.</span>
+<span class="sd">        epsg : int, optional if `crs` is specified</span>
+<span class="sd">            EPSG code specifying output projection.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">uda</span> <span class="o">=</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">crs</span><span class="p">,</span> <span class="n">epsg</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">node_dimension</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">dims</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">uda</span><span class="o">.</span><span class="n">ugrid</span><span class="o">.</span><span class="n">assign_node_coords</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">uda</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.to_geodataframe">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.to_geodataframe.html#xugrid.UgridDataArrayAccessor.to_geodataframe">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_geodataframe</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dim_order</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;geopandas.GeoDataFrame&quot;</span><span class="p">:</span>  <span class="c1"># type: ignore # noqa</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert data and topology of one facet (node, edge, face) of the grid</span>
+<span class="sd">        to a geopandas GeoDataFrame. This also determines the geometry type of</span>
+<span class="sd">        the geodataframe:</span>
+
+<span class="sd">        * node: point</span>
+<span class="sd">        * edge: line</span>
+<span class="sd">        * face: polygon</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dim: str</span>
+<span class="sd">            node, edge, or face dimension. Inferred for DataArray.</span>
+<span class="sd">        name: str</span>
+<span class="sd">            Name to give to the array (required if unnamed).</span>
+<span class="sd">        dim_order:</span>
+<span class="sd">            Hierarchical dimension order for the resulting dataframe. Array content is</span>
+<span class="sd">            transposed to this order and then written out as flat vectors in contiguous</span>
+<span class="sd">            order, so the last dimension in this list will be contiguous in the resulting</span>
+<span class="sd">            DataFrame. This has a major influence on which operations are efficient on the</span>
+<span class="sd">            resulting dataframe.</span>
+
+<span class="sd">            If provided, must include all dimensions of this DataArray. By default,</span>
+<span class="sd">            dimensions are sorted according to the DataArray dimensions order.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        geodataframe: gpd.GeoDataFrame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+
+        <span class="n">dim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">dims</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">()</span>
+
+        <span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">data_vars</span> <span class="k">if</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">dims</span><span class="p">]</span>
+        <span class="c1"># TODO deal with time-dependent data, etc.</span>
+        <span class="c1"># Basically requires checking which variables are static, which aren&#39;t.</span>
+        <span class="c1"># For non-static, requires repeating all geometries.</span>
+        <span class="c1"># Call reset_index on multi-index to generate them as regular columns.</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">variables</span><span class="p">]</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">(</span><span class="n">dim_order</span><span class="o">=</span><span class="n">dim_order</span><span class="p">)</span>
+        <span class="n">geometry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">to_shapely</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">geometry</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.reindex_like">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.reindex_like.html#xugrid.UgridDataArrayAccessor.reindex_like">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reindex_like</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">UgridType</span><span class="p">,</span> <span class="n">UgridDataArray</span><span class="p">,</span> <span class="n">UgridDataset</span><span class="p">],</span>
+        <span class="n">tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Conform this object to match the topology of another object. The</span>
+<span class="sd">        topologies must be exactly equivalent: only the order of the nodes,</span>
+<span class="sd">        edges, and faces may differ.</span>
+
+<span class="sd">        Dimension names must match for equivalent topologies.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other: Ugrid1d, Ugrid2d, UgridDataArray, UgridDataset</span>
+<span class="sd">        obj: DataArray or Dataset</span>
+<span class="sd">        tolerance: float, default value 0.0.</span>
+<span class="sd">            Maximum distance between inexact coordinate matches.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        reindexed: UgridDataArray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">Ugrid1d</span><span class="p">,</span> <span class="n">Ugrid2d</span><span class="p">)):</span>
+            <span class="n">other_grid</span> <span class="o">=</span> <span class="n">other</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="n">UgridDataArray</span><span class="p">,</span> <span class="n">UgridDataset</span><span class="p">)):</span>
+            <span class="n">other_grid</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">ugrid</span><span class="o">.</span><span class="n">grid</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s2">&quot;Expected Ugrid1d, Ugrid2d, UgridDataArray, or UgridDataset,&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;received instead: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="n">new_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">reindex_like</span><span class="p">(</span><span class="n">other_grid</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="n">new_obj</span><span class="p">,</span> <span class="n">other_grid</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_binary_iterate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterations</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">border_value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">border_value</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">exterior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">exterior_faces</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">exterior</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">):</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">connectivity</span><span class="o">.</span><span class="n">_binary_iterate</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">face_face_connectivity</span><span class="p">,</span>
+                <span class="n">obj</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+                <span class="n">value</span><span class="p">,</span>
+                <span class="n">iterations</span><span class="p">,</span>
+                <span class="n">mask</span><span class="p">,</span>
+                <span class="n">exterior</span><span class="p">,</span>
+                <span class="n">border_value</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">da</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="n">da</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;object should be a xr.DataArray&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.binary_dilation">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.binary_dilation.html#xugrid.UgridDataArrayAccessor.binary_dilation">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">binary_dilation</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">border_value</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Binary dilation can be used on a boolean array to expand the &quot;shape&quot; of</span>
+<span class="sd">        features.</span>
+
+<span class="sd">        Compare with :py:func:`scipy.ndimage.binary_dilation`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        iterations: int, default: 1</span>
+<span class="sd">        mask: 1d array of bool, optional</span>
+<span class="sd">        border_value: bool, default value: False</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dilated: UgridDataArray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binary_iterate</span><span class="p">(</span><span class="n">iterations</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">border_value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.binary_erosion">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.binary_erosion.html#xugrid.UgridDataArrayAccessor.binary_erosion">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">binary_erosion</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">border_value</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Binary erosion can be used on a boolean array to shrink the &quot;shape&quot; of</span>
+<span class="sd">        features.</span>
+
+<span class="sd">        Compare with :py:func:`scipy.ndimage.binary_erosion`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        iterations: int, default: 1</span>
+<span class="sd">        mask: 1d array of bool, optional</span>
+<span class="sd">        border_value: bool, default value: False</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        eroded: UgridDataArray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_binary_iterate</span><span class="p">(</span><span class="n">iterations</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">border_value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.connected_components">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.connected_components.html#xugrid.UgridDataArrayAccessor.connected_components">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">connected_components</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Every edge or face is given a component number. If all are connected,</span>
+<span class="sd">        all will have the same number.</span>
+
+<span class="sd">        Wraps :py:func:`scipy.sparse.csgraph.connected_components``.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        labelled: UgridDataArray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csgraph</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">face_face_connectivity</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span>
+            <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">face_dimension</span><span class="p">]),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.reverse_cuthill_mckee">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee.html#xugrid.UgridDataArrayAccessor.reverse_cuthill_mckee">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reverse_cuthill_mckee</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Reduces bandwith of the connectivity matrix.</span>
+
+<span class="sd">        Wraps :py:func:`scipy.sparse.csgraph.reverse_cuthill_mckee`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        reordered: Union[UgridDataArray, UgridDataset]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span>
+        <span class="n">reordered_grid</span><span class="p">,</span> <span class="n">reordering</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">reverse_cuthill_mckee</span><span class="p">()</span>
+        <span class="n">reordered_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">isel</span><span class="p">({</span><span class="n">grid</span><span class="o">.</span><span class="n">face_dimension</span><span class="p">:</span> <span class="n">reordering</span><span class="p">})</span>
+        <span class="c1"># TODO: this might not work properly if e.g. centroids are stored in obj.</span>
+        <span class="c1"># Not all metadata would be reordered.</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span>
+            <span class="n">reordered_data</span><span class="p">,</span>
+            <span class="n">reordered_grid</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.label_partitions">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.label_partitions.html#xugrid.UgridDataArrayAccessor.label_partitions">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">label_partitions</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">n_part</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate partition labels for this grid topology using METIS:</span>
+<span class="sd">        https://github.com/KarypisLab/METIS</span>
+
+<span class="sd">        This method utilizes the pymetis Python bindings:</span>
+<span class="sd">        https://github.com/inducer/pymetis</span>
+
+<span class="sd">        The data of the UgridDataArray are treated as weights.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        n_part: integer</span>
+<span class="sd">            The number of parts to partition the mesh.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        partition_labels: UgridDataArray of integers</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span>
+        <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">dims</span> <span class="o">!=</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">core_dimension</span><span class="p">,):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Weights must be associated with the core-dimension &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;of the grid: </span><span class="si">{</span><span class="n">grid</span><span class="o">.</span><span class="n">core_dimension</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">grid</span><span class="o">.</span><span class="n">label_partitions</span><span class="p">(</span><span class="n">n_part</span><span class="o">=</span><span class="n">n_part</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.interpolate_na">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.interpolate_na.html#xugrid.UgridDataArrayAccessor.interpolate_na">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">interpolate_na</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;nearest&quot;</span><span class="p">,</span>
+        <span class="n">max_distance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fill in NaNs by interpolating.</span>
+
+<span class="sd">        This function automatically finds the UGRID dimension and broadcasts</span>
+<span class="sd">        over the other dimensions.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        method: str, default is &quot;nearest&quot;</span>
+<span class="sd">            Currently the only supported method.</span>
+<span class="sd">        max_distance: nonnegative float, optional.</span>
+<span class="sd">            Use ``None`` for no maximum distance.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        filled: UgridDataArray of floats</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;nearest&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s1">&quot; is not a valid interpolator.&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">max_distance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">max_distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+        <span class="n">grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span>
+        <span class="n">da</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span>
+        <span class="n">ugrid_dim</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">find_ugrid_dim</span><span class="p">(</span><span class="n">da</span><span class="p">)</span>
+
+        <span class="n">da_filled</span> <span class="o">=</span> <span class="n">interpolate_na_helper</span><span class="p">(</span>
+            <span class="n">da</span><span class="p">,</span>
+            <span class="n">ugrid_dim</span><span class="o">=</span><span class="n">ugrid_dim</span><span class="p">,</span>
+            <span class="n">func</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">_nearest_interpolate</span><span class="p">,</span>
+            <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;ugrid_dim&quot;</span><span class="p">:</span> <span class="n">ugrid_dim</span><span class="p">,</span>
+                <span class="s2">&quot;max_distance&quot;</span><span class="p">:</span> <span class="n">max_distance</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="n">da_filled</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.laplace_interpolate">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.laplace_interpolate.html#xugrid.UgridDataArrayAccessor.laplace_interpolate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">laplace_interpolate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">xy_weights</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">direct_solve</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">delta</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">relax</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">rtol</span><span class="o">=</span><span class="mf">1.0e-5</span><span class="p">,</span>
+        <span class="n">atol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">maxiter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fill in NaNs by using Laplace interpolation.</span>
+
+<span class="sd">        This function automatically finds the UGRID dimension and broadcasts</span>
+<span class="sd">        over the other dimensions.</span>
+
+<span class="sd">        This solves Laplace&#39;s equation where where there is no data, with data</span>
+<span class="sd">        values functioning as fixed potential boundary conditions.</span>
+
+<span class="sd">        Note that an iterative solver method will be required for large grids.</span>
+<span class="sd">        In this case, some experimentation with the solver settings may be</span>
+<span class="sd">        required to find a converging solution of sufficient accuracy. Refer to</span>
+<span class="sd">        the documentation of :py:func:`scipy.sparse.linalg.spilu` and</span>
+<span class="sd">        :py:func:`scipy.sparse.linalg.cg`.</span>
+
+<span class="sd">        Data can be interpolated from nodes or faces. Direct interpolation of edge</span>
+<span class="sd">        associated data is not allowed. Instead, create node associated data first,</span>
+<span class="sd">        then translate that data to the edges.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        xy_weights: bool, default False.</span>
+<span class="sd">            Wether to use the inverse of the centroid to centroid distance in</span>
+<span class="sd">            the coefficient matrix. If ``False``, defaults to uniform</span>
+<span class="sd">            coefficients of 1 so that each face connection has equal weight.</span>
+<span class="sd">        direct_solve: bool, optional, default ``False``</span>
+<span class="sd">            Whether to use a direct or an iterative solver or a conjugate gradient</span>
+<span class="sd">            solver. Direct method provides an exact answer, but are unsuitable</span>
+<span class="sd">            for large problems.</span>
+<span class="sd">        delta: float, default 0.0.</span>
+<span class="sd">            ILU0 preconditioner non-diagonally dominant correction.</span>
+<span class="sd">        relax: float, default 0.0.</span>
+<span class="sd">            Modified ILU0 preconditioner relaxation factor.</span>
+<span class="sd">        rtol: float, optional, default 1.0e-5.</span>
+<span class="sd">            Convergence tolerance for ``scipy.sparse.linalg.cg``.</span>
+<span class="sd">        atol: float, optional, default 0.0.</span>
+<span class="sd">            Convergence tolerance for ``scipy.sparse.linalg.cg``.</span>
+<span class="sd">        maxiter: int, default 500.</span>
+<span class="sd">            Maximum number of iterations for ``scipy.sparse.linalg.cg``.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        filled: UgridDataArray of floats</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span>
+        <span class="n">da</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span>
+
+        <span class="n">grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span>
+        <span class="n">da</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span>
+        <span class="n">ugrid_dim</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">find_ugrid_dim</span><span class="p">(</span><span class="n">da</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ugrid_dim</span> <span class="o">==</span> <span class="n">grid</span><span class="o">.</span><span class="n">edge_dimension</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Laplace interpolation along edges is not allowed.&quot;</span><span class="p">)</span>
+
+        <span class="n">connectivity</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">get_connectivity_matrix</span><span class="p">(</span><span class="n">ugrid_dim</span><span class="p">,</span> <span class="n">xy_weights</span><span class="o">=</span><span class="n">xy_weights</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">components_labels</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csgraph</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">connectivity</span><span class="p">)</span>
+        <span class="n">da_filled</span> <span class="o">=</span> <span class="n">interpolate_na_helper</span><span class="p">(</span>
+            <span class="n">da</span><span class="p">,</span>
+            <span class="n">ugrid_dim</span><span class="p">,</span>
+            <span class="n">func</span><span class="o">=</span><span class="n">laplace_interpolate</span><span class="p">,</span>
+            <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;connectivity&quot;</span><span class="p">:</span> <span class="n">connectivity</span><span class="p">,</span>
+                <span class="s2">&quot;use_weights&quot;</span><span class="p">:</span> <span class="n">xy_weights</span><span class="p">,</span>
+                <span class="s2">&quot;components_labels&quot;</span><span class="p">:</span> <span class="n">components_labels</span><span class="p">,</span>
+                <span class="s2">&quot;direct_solve&quot;</span><span class="p">:</span> <span class="n">direct_solve</span><span class="p">,</span>
+                <span class="s2">&quot;delta&quot;</span><span class="p">:</span> <span class="n">delta</span><span class="p">,</span>
+                <span class="s2">&quot;relax&quot;</span><span class="p">:</span> <span class="n">relax</span><span class="p">,</span>
+                <span class="s2">&quot;rtol&quot;</span><span class="p">:</span> <span class="n">rtol</span><span class="p">,</span>
+                <span class="s2">&quot;atol&quot;</span><span class="p">:</span> <span class="n">atol</span><span class="p">,</span>
+                <span class="s2">&quot;maxiter&quot;</span><span class="p">:</span> <span class="n">maxiter</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">UgridDataArray</span><span class="p">(</span><span class="n">da_filled</span><span class="p">,</span> <span class="n">grid</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UgridDataArrayAccessor.to_dataset">
+<a class="viewcode-back" href="../../../api/xugrid.UgridDataArrayAccessor.to_dataset.html#xugrid.UgridDataArrayAccessor.to_dataset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optional_attributes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert this UgridDataArray or UgridDataset into a standard</span>
+<span class="sd">        xarray.Dataset.</span>
+
+<span class="sd">        The UGRID topology information is added as standard data variables.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        optional_attributes: bool, default: False.</span>
+<span class="sd">            Whether to generate the UGRID optional attributes.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dataset: UgridDataset</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">optional_attributes</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Deltares.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
